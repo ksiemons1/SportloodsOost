@@ -160,8 +160,8 @@ export default function Home() {
           
         {/* Memberships */}
         <div className="mb-16">
-          <div className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl md:mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 md:px-0"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', scrollPaddingLeft: 'calc(50vw - 140px)', scrollPaddingRight: 'calc(50vw - 140px)' }}
+          <div className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl md:mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 px-[calc(50vw-140px)] md:px-0"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             <style jsx>{`
               div::-webkit-scrollbar {

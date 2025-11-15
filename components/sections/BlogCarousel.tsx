@@ -258,9 +258,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
             className="overflow-x-auto animate-fadeIn touch-pan-y w-full snap-x snap-mandatory carousel-scroll-container"
             style={{ 
               scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              scrollPaddingLeft: 'calc(50vw - 150px)',
-              scrollPaddingRight: 'calc(50vw - 150px)'
+              msOverflowStyle: 'none'
             }}
           >
             <style jsx>{`
@@ -278,7 +276,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                 display: none;
               }
             `}</style>
-            <div className="flex gap-4 md:gap-6 md:px-0" style={{ width: 'max-content' }}>
+            <div className="flex gap-4 md:gap-6 px-[calc(50vw-150px)] md:px-0" style={{ width: 'max-content' }}>
               {posts.map((post, index) => (
                 <button
                   key={index}

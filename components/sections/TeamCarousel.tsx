@@ -111,8 +111,8 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="flex overflow-x-auto gap-4 md:gap-8 justify-start md:justify-center animate-fadeIn snap-x snap-mandatory touch-pan-y md:px-0"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', scrollPaddingLeft: 'calc(50vw - 140px)', scrollPaddingRight: 'calc(50vw - 140px)' }}
+          className="flex overflow-x-auto gap-4 md:gap-8 justify-start md:justify-center animate-fadeIn snap-x snap-mandatory touch-pan-y px-[calc(50vw-140px)] md:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <style jsx>{`
             div::-webkit-scrollbar {
