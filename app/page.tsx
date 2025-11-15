@@ -55,7 +55,7 @@ export default function Home() {
                 </Button>
 
                 <Button
-                  href="#openingstijden"
+                  href="#location"
                   variant="secondary"
                   size="lg"
                   className="font-bold text-lg px-8 py-4 bg-white text-primary-600 hover:bg-primary-600 hover:text-white transition-colors"
@@ -117,7 +117,9 @@ export default function Home() {
       {/* Mission & Story - Side by Side */}
       <Section background="white" className="!py-8">
         <Container>
-          <MissionStorySection mission={mission} story={story} />
+          <div className="my-24">
+            <MissionStorySection mission={mission} story={story} />
+          </div>
         </Container>
       </Section>
 
@@ -234,6 +236,16 @@ export default function Home() {
           </div>
       </section>
 
+      {/* Final CTA Section */}
+      <CTASection
+        title={cta.title}
+        description={cta.description}
+        buttonLabel={cta.button}
+        buttonHref="#contact"
+        note={cta.note}
+        background="primary"
+      />
+
       {/* Opening Times Section */}
       <Section background="gray" id="openingstijden">
         <Container>
@@ -297,16 +309,6 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Final CTA Section */}
-      <CTASection
-        title={cta.title}
-        description={cta.description}
-        buttonLabel={cta.button}
-        buttonHref="#contact"
-        note={cta.note}
-        background="primary"
-      />
-
       {/* Blog Section */}
       <section id="blog" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 mb-12">
@@ -322,8 +324,34 @@ export default function Home() {
         <BlogCarousel posts={featured.items} />
       </section>
 
+      {/* Location Section */}
+      <Section background="gray" id="location">
+        <Container>
+          <Heading level={2} className="text-center mb-4">
+            {content.location.map.title}
+          </Heading>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            {content.location.map.description}
+          </p>
+
+          {/* Google Maps Embed */}
+          <div className="w-full h-[400px] md:h-[500px] border border-gray-200 overflow-hidden">
+            <iframe
+              src={content.location.map.embedUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Sportloods Oost Locatie"
+            />
+          </div>
+        </Container>
+      </Section>
+
       {/* Contact Section */}
-      <Section background="gray" id="contact">
+      <Section background="white" id="contact">
         <Container>
           <Heading level={2} className="text-center mb-12">
             {form.title}

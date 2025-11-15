@@ -230,7 +230,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
           {/* Left Arrow - Outside container */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
+            className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
             aria-label="Previous"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,7 +241,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
           {/* Right Arrow - Outside container */}
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
+            className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
             aria-label="Next"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -6,9 +6,9 @@
     "phone": "+31 (0)24 123 4567",
     "email": "info@sportloodsoost.nl",
     "address": {
-      "street": "Oude Kleefsebaan 1",
+      "street": "Coehoornstraat 71",
       "city": "Nijmegen",
-      "postal": "6572 AA",
+      "postal": "6521 CC",
       "country": "Nederland"
     },
     "social": {
@@ -24,6 +24,7 @@
       { "label": "Aanbod", "href": "#offerings" },
       { "label": "Tarieven", "href": "#tarieven" },
       { "label": "Openingstijden", "href": "#openingstijden" },
+      { "label": "Locatie", "href": "#location" },
       { "label": "Contact", "href": "#contact" }
     ],
     "cta": {
@@ -41,7 +42,7 @@
       "description": "Welkom bij Sportloods Oost – waar expertise en persoonlijke aandacht samenkomen voor effectieve functionele krachttraining.",
       "cta": {
         "primary": "Proefles Boeken",
-        "secondary": "Openingstijden"
+        "secondary": "Bezoek Ons"
       },
       "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop"
     },
@@ -497,6 +498,32 @@
       ]
     }
   },
+  "location": {
+    "meta": {
+      "title": "Locatie | Sportloods Oost",
+      "description": "Vind ons in Nijmegen-Oost. Bekijk de routebeschrijving en kom langs!"
+    },
+    "hero": {
+      "title": "Locatie",
+      "subtitle": "Kom langs in onze authentieke luchtmachtloods"
+    },
+    "address": {
+      "street": "Coehoornstraat 71",
+      "city": "Nijmegen",
+      "postal": "6521 CC",
+      "country": "Nederland"
+    },
+    "map": {
+      "title": "Locatie",
+      "description": "We zijn gevestigd aan de Coehoornstraat in Nijmegen-Oost, vlakbij het centrum. Gratis parkeren voor de deur.",
+      "embedUrl": "https://www.google.com/maps?q=Coehoornstraat+71,+6521+CC+Nijmegen&output=embed"
+    },
+    "info": {
+      "parking": "Gratis parkeren direct voor de deur",
+      "publicTransport": "Bushalte op 5 minuten loopafstand",
+      "bike": "Fietsenstalling beschikbaar"
+    }
+  },
   "contact": {
     "meta": {
       "title": "Contact | Sportloods Oost",
@@ -527,7 +554,7 @@
         {
           "type": "location",
           "label": "Adres",
-          "value": "Oude Kleefsebaan 1, 6572 AA Nijmegen",
+          "value": "Coehoornstraat 71, 6521 CC Nijmegen",
           "note": "Gratis parkeren voor de deur"
         }
       ]
@@ -619,15 +646,14 @@
         "links": [
           { "label": "Openingstijden", "href": "#openingstijden" },
           { "label": "Blog", "href": "#blog" },
-          { "label": "Team", "href": "#team" },
           { "label": "Contact", "href": "#contact" }
         ]
       },
       "contact": {
         "title": "Contact",
         "items": [
-          "Oude Kleefsebaan 1",
-          "6572 AA Nijmegen",
+          "Coehoornstraat 71",
+          "6521 CC Nijmegen",
           "+31 (0)24 123 4567",
           "info@sportloodsoost.nl"
         ]
