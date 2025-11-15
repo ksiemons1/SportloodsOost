@@ -299,9 +299,17 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                       hyphens: 'auto',
                       textShadow: '0 2px 4px rgba(0,0,0,0.8)'
                     }}>{post.title}</h3>
-                    <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
-                      {post.date}
-                    </span>
+                    <div className="flex items-center justify-between">
+                      <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
+                        {post.date}
+                      </span>
+                      {/* Tap indicator - visible only on mobile */}
+                      <div className="md:hidden bg-white/90 backdrop-blur-sm rounded-full p-1.5 h-[28px] w-[28px] flex items-center justify-center">
+                        <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </button>
               ))}
