@@ -185,7 +185,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
     <div className="transition-all duration-500 ease-in-out">
       {selectedPost ? (
         /* Selected view - Image left, Content right */
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start animate-fadeIn" style={{ minHeight: '500px' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start animate-fadeIn px-4 lg:px-0" style={{ minHeight: '500px' }}>
           {/* Image - Left side */}
           <div className="animate-slideInLeft" style={{ height: '500px', maxWidth: '400px' }}>
             <button
