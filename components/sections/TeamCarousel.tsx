@@ -50,7 +50,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
     <div className="transition-all duration-500 ease-in-out">
       {selectedMember ? (
         /* Selected view - Portrait left, Text right */
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start animate-fadeIn px-4 lg:px-0" style={{ minHeight: '400px' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start animate-fadeIn px-6 lg:px-0" style={{ minHeight: '400px' }}>
           {/* Portrait - Left side */}
           <div className="animate-slideInLeft mx-auto w-full" style={{ height: '400px', maxWidth: '400px' }}>
             <button
