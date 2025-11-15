@@ -48,7 +48,10 @@
     "mission": {
       "title": "Onze Filosofie",
       "subtitle": "Training met expertise en passie",
-      "description": "Bij Sportloods Oost draait alles om kwalitatieve begeleiding en persoonlijke aandacht. Een van onze oprichters is fysiotherapeut, waardoor we een unieke combinatie bieden van sporttraining en medische expertise. Of je nu komt voor functionele training, gewichtheffen, of hersteltraining - wij zorgen dat je veilig en effectief traint.",
+      "description": [
+        "Bij Sportloods Oost draait alles om kwalitatieve begeleiding en persoonlijke aandacht. Een van onze oprichters is fysiotherapeut, waardoor we een unieke combinatie bieden van sporttraining en medische expertise.",
+        "Of je nu komt voor functionele training, gewichtheffen, of hersteltraining - wij zorgen dat je veilig en effectief traint."
+      ],
       "values": [
         {
           "number": "10",
@@ -116,8 +119,12 @@
       "members": [
         {
           "name": "Jeffrew Meeuwsen",
-          "role": "CEO",
-          "bio": "Tijdens zijn topsportcarriere in de judo heeft Jeffrey naast de judotrainingen ook veel aan conditie- en krachttraining gedaan. Na zijn judocarriere heeft hij de krachttraining uitgebreid tot Olympisch gewichtheffen. Ook in deze sport heeft hij mooie sportieve prestaties neergezet. Sinds 2000 heeft hij diverse trainingen bij (sport-)scholen en instellingen gegeven. In 2012 is hij voor zichzelf begonnen. Zijn eigen bedrijf bleef groeien en verhuisde naar een steeds grotere locatie. In de zomer van 2018 is zijn bedrijf JMSPORTS samen gegaan met Leef je FiT! van Lieke Hermans. Jeffrey is zelf uit de wedstrijdsporten gegaan en legt zich nu volledig op het trainen en coachen van atleten. Sporten blijft zijn tweede natuur en heeft nu in Crossfit een goede uitdaging gevonden.",
+          "role": "Oprichter & trainer",
+          "bio": [
+            "Tijdens zijn topsportcarriere in de judo heeft Jeffrey naast de judotrainingen ook veel aan conditie- en krachttraining gedaan. Na zijn judocarriere heeft hij de krachttraining uitgebreid tot Olympisch gewichtheffen. Ook in deze sport heeft hij mooie sportieve prestaties neergezet.",
+            "Sinds 2000 heeft hij diverse trainingen bij (sport-)scholen en instellingen gegeven. In 2012 is hij voor zichzelf begonnen. Zijn eigen bedrijf bleef groeien en verhuisde naar een steeds grotere locatie. In de zomer van 2018 is zijn bedrijf JMSPORTS samen gegaan met Leef je FiT! van Lieke Hermans.",
+            "Jeffrey is zelf uit de wedstrijdsporten gegaan en legt zich nu volledig op het trainen en coachen van atleten. Sporten blijft zijn tweede natuur en heeft nu in Crossfit een goede uitdaging gevonden."
+            ],
           "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=faces",
           "certifications": [
             "CrossFit Level 2 Trainer",
@@ -127,8 +134,12 @@
         },
         {
           "name": "Lieke Hermans",
-          "role": "Fysiotherapeut",
-          "bio": "Lieke heeft 15 jaar als fysiotherapeute in een revalidatiecentrum gewerkt en geeft daarbij al sinds 2006 sportlessen. Zij begon met groepslessen in een sportschool en sinds 2014 werkt zij ook als personal trainer en vitaliteitscoach. Na diverse sporten beoefend te hebben, waarvan dansen haar grootste passie was, heeft zij op 38-jarige leeftijd het Olympisch gewichtheffen ontdekt. Naast het gewichtheffen heeft zij nu ook Crossfit opgepakt. Lieke heeft als fysiotherapeute en fysiek trainer ook heel veel vrouwen mogen begeleiden tijdens hun zwangerschap en na hun bevalling. Want juist ook als je zwanger bent is het zo belangrijk om te blijven sporten en sterk en fit te blijven!",
+          "role": "Oprichter, trainer & fysiotherapeut",
+          "bio": [
+            "Lieke heeft 15 jaar als fysiotherapeute in een revalidatiecentrum gewerkt en geeft daarbij al sinds 2006 sportlessen. Zij begon met groepslessen in een sportschool en sinds 2014 werkt zij ook als personal trainer en vitaliteitscoach.",
+            "Na diverse sporten beoefend te hebben, waarvan dansen haar grootste passie was, heeft zij op 38-jarige leeftijd het Olympisch gewichtheffen ontdekt. Naast het gewichtheffen heeft zij nu ook Crossfit opgepakt.",
+            "Lieke heeft als fysiotherapeute en fysiek trainer ook heel veel vrouwen mogen begeleiden tijdens hun zwangerschap en na hun bevalling. Want juist ook als je zwanger bent is het zo belangrijk om te blijven sporten en sterk en fit te blijven!"
+          ],
           "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=faces",
           "certifications": [
             "Fysiotherapeut BIG-geregistreerd",
@@ -429,7 +440,10 @@
           ]
         }
       ],
-      "note": "Personal training, coaching en voedingsadvies zijn beschikbaar op afspraak, ook buiten de reguliere openingstijden. Fysiotherapeutisch advies met betrekking tot training wordt aangeboden tijdens openingstijden, en kan desgewenst eveneens op afspraak worden ingepland."
+      "note": [
+        "Personal training, coaching en voedingsadvies zijn beschikbaar op afspraak, ook buiten de reguliere openingstijden.",
+        "Fysiotherapeutisch advies met betrekking tot training wordt aangeboden tijdens openingstijden, en kan desgewenst eveneens op afspraak worden ingepland."
+    ]
     }
   },
   "blog": {

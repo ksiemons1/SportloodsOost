@@ -5,7 +5,7 @@ import React, { useState, useRef } from 'react';
 interface TeamMember {
   name: string;
   role: string;
-  bio: string;
+  bio: string | string[];
   image: string;
   certifications: string[];
 }
@@ -75,9 +75,15 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
             <p className="text-primary-600 font-semibold text-lg lg:text-xl mb-6 lg:mb-8">
               {selectedMember.role}
             </p>
-            <p className="text-gray-700 mb-6 lg:mb-8 leading-relaxed text-base lg:text-lg">
-              {selectedMember.bio}
-            </p>
+            <div className="text-gray-700 mb-6 lg:mb-8 leading-relaxed text-base lg:text-lg space-y-6">
+              {Array.isArray(selectedMember.bio) ? (
+                selectedMember.bio.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))
+              ) : (
+                <p>{selectedMember.bio}</p>
+              )}
+            </div>
             <div>
               <h4 className="font-semibold text-gray-900 mb-3 lg:mb-4 text-lg lg:text-xl">
                 Kwalificaties:

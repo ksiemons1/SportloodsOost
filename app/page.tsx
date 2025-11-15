@@ -282,9 +282,15 @@ export default function Home() {
                 })}
               </div>
               {hours.note && (
-                <p className="text-gray-600 text-center mt-8">
-                  {hours.note}
-                </p>
+                <div className="text-gray-600 text-center mt-8 space-y-4">
+                  {Array.isArray(hours.note) ? (
+                    hours.note.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <p>{hours.note}</p>
+                  )}
+                </div>
               )}
             </div>
           </div>

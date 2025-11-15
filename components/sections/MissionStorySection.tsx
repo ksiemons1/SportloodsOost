@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 interface MissionStoryProps {
   mission: {
     title: string;
-    description: string;
+    description: string | string[];
   };
   story: {
     title: string;
@@ -49,10 +49,18 @@ export const MissionStorySection: React.FC<MissionStoryProps> = ({ mission, stor
       <div className="lg:col-span-2">
         <div className="relative transition-all duration-500 ease-in-out lg:min-h-[600px]">
           {activeTab === 'mission' && (
-            <div className="lg:absolute lg:inset-0 animate-fadeIn">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                {mission.description}
-              </p>
+            <div className="lg:absolute lg:inset-0 animate-fadeIn space-y-6">
+              {Array.isArray(mission.description) ? (
+                mission.description.map((paragraph, index) => (
+                  <p key={index} className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))
+              ) : (
+                <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                  {mission.description}
+                </p>
+              )}
             </div>
           )}
           
