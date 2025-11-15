@@ -47,7 +47,7 @@ export const MissionStorySection: React.FC<MissionStoryProps> = ({ mission, stor
 
       {/* Right side - Content */}
       <div className="lg:col-span-2">
-        <div className="relative transition-all duration-500 ease-in-out" style={{ minHeight: window.innerWidth >= 1024 ? '600px' : 'auto' }}>
+        <div className="relative transition-all duration-500 ease-in-out lg:min-h-[600px]">
           {activeTab === 'mission' && (
             <div className="lg:absolute lg:inset-0 animate-fadeIn">
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
