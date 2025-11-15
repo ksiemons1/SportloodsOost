@@ -1,0 +1,648 @@
+{
+  "site": {
+    "name": "Sportloods Oost",
+    "tagline": "Train met expertise",
+    "description": "Functional training en strength training gym in Nijmegen. Gevestigd in een authentieke luchtmachtloods.",
+    "phone": "+31 (0)24 123 4567",
+    "email": "info@sportloodsoost.nl",
+    "address": {
+      "street": "Oude Kleefsebaan 1",
+      "city": "Nijmegen",
+      "postal": "6572 AA",
+      "country": "Nederland"
+    },
+    "social": {
+      "facebook": "https://facebook.com/sportloodsoost",
+      "instagram": "https://instagram.com/sportloodsoost",
+      "linkedin": "https://linkedin.com/company/sportloodsoost"
+    }
+  },
+  "nav": {
+    "items": [
+      { "label": "Home", "href": "#home" },
+      { "label": "Over Ons", "href": "#about" },
+      { "label": "Aanbod", "href": "#offerings" },
+      { "label": "Tarieven", "href": "#tarieven" },
+      { "label": "Openingstijden", "href": "#openingstijden" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": {
+      "label": "Inloggen",
+      "href": "/login"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Sportloods Oost | Functional Training & Strength Training Nijmegen",
+      "description": "Sportloods Oost: functional training, gewichtheffen en personal training in een authentieke luchtmachtloods in Nijmegen. Expert coaching voor iedereen van 7 tot 77 jaar."
+    },
+    "hero": {
+      "title": "Functionele\nTraining",
+      "description": "Welkom bij Sportloods Oost – waar expertise en persoonlijke aandacht samenkomen voor effectieve functionele krachttraining.",
+      "cta": {
+        "primary": "Proefles Boeken",
+        "secondary": "Openingstijden"
+      },
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop"
+    },
+    "mission": {
+      "title": "Onze Filosofie",
+      "subtitle": "Training met expertise en passie",
+      "description": "Bij Sportloods Oost draait alles om kwalitatieve begeleiding en persoonlijke aandacht. Een van onze oprichters is fysiotherapeut, waardoor we een unieke combinatie bieden van sporttraining en medische expertise. Of je nu komt voor functionele training, gewichtheffen, of hersteltraining - wij zorgen dat je veilig en effectief traint.",
+      "values": [
+        {
+          "number": "10",
+          "description": "Prestaties in de topsport",
+          "icon": "certificate"
+        },
+        {
+          "number": "15",
+          "description": "Fysiotherapie en vitaliteitscoaching",
+          "icon": "users"
+        },
+        {
+          "number": "10",
+          "description": "Ondernemen in de sport",
+          "icon": "building"
+        }
+      ]
+    },
+    "features": {
+      "title": "Wat Maakt Ons Uniek?",
+      "items": [
+        {
+          "title": "Oude Luchtmachtloods",
+          "description": "Train in een authentieke, industriële setting die inspireert en motiveert.",
+          "image": "/images/hangar.jpg"
+        },
+        {
+          "title": "Fysiotherapeut aan Boord",
+          "description": "Unieke combinatie van training en medische expertise voor optimale resultaten.",
+          "image": "/images/physio.jpg"
+        },
+        {
+          "title": "Voor Jong en Oud",
+          "description": "Van jeugdtraining (7-17 jaar) tot senioren - iedereen is welkom.",
+          "image": "/images/youth.jpg"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Klaar om te Beginnen?",
+      "description": "Boek een gratis proefles en ervaar zelf de unieke sfeer van Sportloods Oost.",
+      "button": "Proefles Boeken",
+      "note": "Geen gedoe, geen automatische incasso - gewoon goed trainen."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Over Ons | Sportloods Oost",
+      "description": "Leer het team achter Sportloods Oost kennen. Onze oprichters combineren expertise in training en fysiotherapie voor optimale begeleiding."
+    },
+    "hero": {
+      "title": "Over Sportloods Oost"
+    },
+    "story": {
+      "title": "Ons Verhaal",
+      "content": [
+        "Sportloods Oost is ontstaan uit de passie voor beweging en de wens om hoogwaardige training toegankelijk te maken. Gevestigd in een authentieke oude luchtmachtloods in Nijmegen-Oost, bieden wij een unieke trainingsomgeving waar de focus ligt op resultaat, veiligheid en persoonlijke ontwikkeling.",
+        "De combinatie van sporttraining en fysiotherapeutische expertise maakt ons uniek. Een van onze oprichters is fysiotherapeut, wat betekent dat we niet alleen trainen voor prestatie, maar ook voor herstel, preventie en duurzame gezondheid.",
+        "Onze no-nonsense benadering betekent: geen opsmuk, geen verplichte contracten, en vooral veel persoonlijke aandacht. We geloven in kleine groepen, individuele coaching en een community waar iedereen zich welkom voelt."
+      ]
+    },
+    "team": {
+      "title": "Ons Team",
+      "intro": "Maak kennis met de mensen achter Sportloods Oost. Ons team combineert jarenlange ervaring in topsport, fysiotherapie en coaching om jou de beste begeleiding te bieden.",
+      "members": [
+        {
+          "name": "Jeffrew Meeuwsen",
+          "role": "CEO",
+          "bio": "Tijdens zijn topsportcarriere in de judo heeft Jeffrey naast de judotrainingen ook veel aan conditie- en krachttraining gedaan. Na zijn judocarriere heeft hij de krachttraining uitgebreid tot Olympisch gewichtheffen. Ook in deze sport heeft hij mooie sportieve prestaties neergezet. Sinds 2000 heeft hij diverse trainingen bij (sport-)scholen en instellingen gegeven. In 2012 is hij voor zichzelf begonnen. Zijn eigen bedrijf bleef groeien en verhuisde naar een steeds grotere locatie. In de zomer van 2018 is zijn bedrijf JMSPORTS samen gegaan met Leef je FiT! van Lieke Hermans. Jeffrey is zelf uit de wedstrijdsporten gegaan en legt zich nu volledig op het trainen en coachen van atleten. Sporten blijft zijn tweede natuur en heeft nu in Crossfit een goede uitdaging gevonden.",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=faces",
+          "certifications": [
+            "CrossFit Level 2 Trainer",
+            "gewichtheffen Coach",
+            "Nutrition Coach"
+          ]
+        },
+        {
+          "name": "Lieke Hermans",
+          "role": "Fysiotherapeut",
+          "bio": "Lieke heeft 15 jaar als fysiotherapeute in een revalidatiecentrum gewerkt en geeft daarbij al sinds 2006 sportlessen. Zij begon met groepslessen in een sportschool en sinds 2014 werkt zij ook als personal trainer en vitaliteitscoach. Na diverse sporten beoefend te hebben, waarvan dansen haar grootste passie was, heeft zij op 38-jarige leeftijd het Olympisch gewichtheffen ontdekt. Naast het gewichtheffen heeft zij nu ook Crossfit opgepakt. Lieke heeft als fysiotherapeute en fysiek trainer ook heel veel vrouwen mogen begeleiden tijdens hun zwangerschap en na hun bevalling. Want juist ook als je zwanger bent is het zo belangrijk om te blijven sporten en sterk en fit te blijven!",
+          "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=faces",
+          "certifications": [
+            "Fysiotherapeut BIG-geregistreerd",
+            "Gecertificeerd Strength Coach",
+            "Sportfysiotherapie"
+          ]
+        }
+      ]
+    },
+    "usps": {
+      "title": "Waarom Sportloods Oost?",
+      "items": [
+        {
+          "title": "Expertise & Ervaring",
+          "description": "Gediplomeerde trainers en een fysiotherapeut die weten waar ze mee bezig zijn."
+        },
+        {
+          "title": "Persoonlijke Begeleiding",
+          "description": "Geen massale groepslessen - bij ons krijg je de aandacht die je verdient."
+        },
+        {
+          "title": "Unieke Locatie",
+          "description": "Train in een authentieke luchtmachtloods met ruwe, industriële uitstraling."
+        },
+        {
+          "title": "Medische Kennis",
+          "description": "Fysiotherapeutische expertise voor veilige training en herstel."
+        },
+        {
+          "title": "Brede Doelgroep",
+          "description": "Van jeugd tot senior, van beginner tot gevorderd - iedereen is welkom."
+        },
+        {
+          "title": "No-Nonsense",
+          "description": "Geen gedoe, geen langdurige contracten - gewoon goed trainen."
+        }
+      ]
+    }
+  },
+  "offerings": {
+    "meta": {
+      "title": "Ons Aanbod | Sportloods Oost",
+      "description": "Ontdek ons uitgebreide aanbod: functional training, personal training, gewichtheffen, jeugdtraining en medische fitness."
+    },
+    "hero": {
+      "title": "Ons Trainingsaanbod",
+      "subtitle": "Voor ieder doel en ieder niveau"
+    },
+    "intro": {
+      "text": "Bij Sportloods Oost bieden we een breed scala aan trainingsmogelijkheden. Of je nu wilt werken aan kracht, conditie, techniek of herstel - wij hebben het programma dat bij je past."
+    },
+    "programs": [
+      {
+        "id": "personal",
+        "title": "Personal Training",
+        "tagline": "Jouw doel, onze expertise",
+        "description": "One-on-one begeleiding voor maximale resultaten. Of je nu een specifiek doel hebt, aan een blessure werkt of gewoon wilt dat iemand 100% focus op jou heeft - personal training is de meest effectieve manier van trainen.",
+        "features": [
+          "Volledig gepersonaliseerd programma",
+          "Flexibele planning",
+          "Directe feedback en techniekschuling",
+          "Nutritie-advies mogelijk",
+          "Regelmatige voortgangsmetingen"
+        ],
+        "suitable": "Voor iedereen die persoonlijke aandacht en snelle resultaten wil",
+        "image": "/images/personal-training.jpg"
+      },
+      {
+        "id": "small-group",
+        "title": "Small Group Training",
+        "tagline": "Persoonlijk in een kleine groep",
+        "description": "Het beste van twee werelden: train in een kleine groep (4-6 personen) met semi-persoonlijke aandacht. Ideaal voor wie de motivatie van groepstraining zoekt met de begeleiding van personal training.",
+        "features": [
+          "Maximaal 6 personen",
+          "Op maat gemaakt programma",
+          "Vaste groep, vaste tijd",
+          "Persoonlijke doelen binnen groepsetting",
+          "Betaalbaar alternatief voor PT"
+        ],
+        "suitable": "Perfect voor vrienden, collega's of families die samen willen trainen",
+        "image": "/images/small-group.jpg"
+      },
+      {
+        "id": "weightlifting",
+        "title": "Gewichtheffen",
+        "tagline": "Snatch en clean & jerk techniek",
+        "description": "Gespecialiseerde training in de twee Olympic lifts: snatch en clean & jerk. Voor wie de techniek van deze complexe bewegingen wil leren of verbeteren onder begeleiding van ervaren coaches.",
+        "features": [
+          "Techniekgerichte coaching",
+          "Video-analyse mogelijk",
+          "Programmering voor wedstrijden",
+          "Beginners welkom",
+          "Dedicated weightlifting platforms"
+        ],
+        "suitable": "Van absolute beginner tot competitief weightlifter",
+        "image": "/images/weightlifting.jpg"
+      },
+      {
+        "id": "youth",
+        "title": "Jeugdtraining (7-17 jaar)",
+        "tagline": "Kracht en zelfvertrouwen voor jonge sporters",
+        "description": "Speciaal ontwikkelde trainingen voor jongeren. We leren kinderen en tieners de basis van krachtraining, bewegingskwaliteit en discipline in een veilige en leuke omgeving.",
+        "features": [
+          "Leeftijdsspecifiek programma",
+          "Focus op techniek en lichaamsbewustzijn",
+          "Kleine groepen (max 8-10)",
+          "Spelelement en uitdaging",
+          "Ervaring met jeugdbegeleiding"
+        ],
+        "suitable": "Voor kinderen en tieners van 7 tot 17 jaar, alle niveaus",
+        "image": "/images/youth-training.jpg"
+      }
+    ],
+    "cta": {
+      "title": "Niet Zeker Welk Programma bij Je Past?",
+      "description": "Plan een gratis kennismakingsgesprek en we adviseren je graag.",
+      "button": "Afspraak Maken"
+    }
+  },
+  "tarieven": {
+    "meta": {
+      "title": "Tarieven | Sportloods Oost",
+      "description": "Transparante prijzen voor al onze trainingsopties. Geen verborgen kosten, geen automatische verlengingen."
+    },
+    "hero": {
+      "title": "Tarieven",
+      "subtitle": "Eerlijke prijzen, geen gedoe"
+    },
+    "intro": {
+      "text": "Bij Sportloods Oost geloven we in transparantie. Hieronder vind je alle prijzen overzichtelijk weergegeven. Geen verborgen kosten, geen automatische verlengingen zonder waarschuwing."
+    },
+
+    "memberships": {
+      "title": "Lidmaatschappen",
+      "items": [
+        {
+          "name": "Halfjaar Abonnement",
+          "pricePrefix": "vanaf",
+          "price": "€42,50",
+          "features": [
+            "Kies tussen 5, 9 of 13 keer per maand, of onbeperkt trainen",
+            "Toegang tot alle tijdslots",
+            "Open gym inbegrepen",
+            "Loopt automatisch af na 6 maanden"
+          ],
+          "popular": false
+        },
+        {
+          "name": "Strippenkaart",
+          "pricePrefix": "vanaf",
+          "price": "€110,-",
+          "features": [
+            "10 groepslessen",
+            "Volledig flexibel in te plannen",
+            "Geen contract of verplichtingen",
+            "Ideaal voor drukke agenda's"
+          ],
+          "popular": true
+        },
+        {
+          "name": "Personal Training",
+          "pricePrefix": "",
+          "price": "€75",
+          "features": [
+            "Incl. 9% BTW",
+            "One-on-one coaching",
+            "Volledig persoonlijk trainingsplan",
+            "Ideaal voor sneller resultaat of specifieke doelen"
+          ]
+        }
+      ],
+      "fullWidth": {
+        "name": "Jeugd Training",
+        "pricePrefix": "vanaf",
+        "price": "€30",
+        "features": [
+          "Jeugdtraining (7-17 jaar)",
+          "Kies tussen een halfjaar abonnement of strippenkaart",
+          "Leeftijdsspecifiek programma",
+
+          "Gediplomeerde jeugdcoach"
+        ]
+      }
+    },
+
+    "youth": {
+      "title": "Jeugdtraining (7-17 jaar)",
+      "items": [
+        {
+          "name": "1x per Week",
+          "price": "€35",
+          "period": "per maand",
+          "features": [
+            "4 lessen per maand",
+            "Leeftijdsspecifiek programma",
+            "Maximaal 10 kinderen",
+            "Gediplomeerde jeugdcoach"
+          ]
+        },
+        {
+          "name": "2x per Week",
+          "price": "€60",
+          "period": "per maand",
+          "features": [
+            "8 lessen per maand",
+            "Snellere progressie",
+            "Maximaal 10 kinderen",
+            "Gediplomeerde jeugdcoach"
+          ],
+          "popular": true
+        }
+      ]
+    },
+    "additional": {
+      "title": "Aanvullende Informatie",
+      "items": [
+        {
+          "title": "Inschrijfkosten",
+          "description": "Eenmalig €25 voor administratie en kennismakingsgesprek."
+        },
+        {
+          "title": "Opzegging",
+          "description": "Maandelijkse lidmaatschappen zijn per maand opzegbaar tot de 20e van de maand."
+        },
+        {
+          "title": "Proefles",
+          "description": "Je eerste les is gratis! Geen verplichtingen, gewoon ervaren hoe het is."
+        },
+        {
+          "title": "Korting",
+          "description": "Studenten en 65+ krijgen 10% korting op maandelijkse lidmaatschappen."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Klaar om te Starten?",
+      "description": "Boek je gratis proefles of neem contact op voor vragen.",
+      "button": "Proefles Boeken"
+    }
+  },
+  "openingstijden": {
+    "meta": {
+      "title": "Openingstijden | Sportloods Oost",
+      "description": "Bekijk onze openingstijden en het volledige lesrooster. Ook open voor open gym buiten lestijden."
+    },
+    "hero": {
+      "title": "Openingstijden"
+    },
+    "hours": {
+      "description": "Je kunt aan je eigen doelen werken en/of meedoen met de groepstraining. Waar je ook voor kiest, er is altijd een trainer aanwezig die jou kan helpen.",
+      "schedule": [
+        {
+          "day": "Maandag",
+          "ranges": [
+            { "start": "08:00", "end": "12:00" },
+            { "start": "17:00", "end": "21:00" }
+          ]
+        },
+        {
+          "day": "Dinsdag",
+          "ranges": [
+            { "start": "09:00", "end": "12:00" },
+            { "start": "18:00", "end": "21:00" }
+          ]
+        },
+        {
+          "day": "Woensdag",
+          "ranges": [
+            { "start": "07:00", "end": "12:00" },
+            { "start": "17:00", "end": "21:00" }
+          ]
+        },
+        {
+          "day": "Donderdag",
+          "ranges": [
+            { "start": "09:00", "end": "12:00" },
+            { "start": "16:30", "end": "17:15" },
+            { "start": "17:30", "end": "20:30" }
+          ]
+        },
+        {
+          "day": "Vrijdag",
+          "ranges": [
+            { "start": "07:00", "end": "12:00" },
+            { "start": "16:00", "end": "18:00" }
+          ]
+        },
+        {
+          "day": "Zaterdag",
+          "ranges": [
+            { "start": "08:00", "end": "12:00" }
+          ]
+        },
+        {
+          "day": "Zondag",
+          "ranges": [
+            { "start": "08:00", "end": "12:00" }
+          ]
+        }
+      ],
+      "note": "Personal training, coaching en voedingsadvies zijn beschikbaar op afspraak, ook buiten de reguliere openingstijden. Fysiotherapeutisch advies met betrekking tot training wordt aangeboden tijdens openingstijden, en kan desgewenst eveneens op afspraak worden ingepland."
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog & Nieuws | Sportloods Oost",
+      "description": "Blijf op de hoogte van het laatste nieuws, tips en updates van Sportloods Oost."
+    },
+    "hero": {
+      "title": "Blog & Nieuws",
+      "subtitle": "Updates, tips en verhalen uit de loods"
+    },
+    "intro": {
+      "text": "Hier delen we regelmatig updates, trainingstips, succesverhalen van onze leden en andere nieuwtjes uit de wereld van Sportloods Oost."
+    },
+    "comingSoon": {
+      "title": "Binnenkort Beschikbaar",
+      "description": "We zijn druk bezig met het opzetten van onze blog. Binnenkort vind je hier regelmatig nieuwe artikelen over training, voeding, herstel en meer. In de tussentijd kun je ons volgen op Instagram en Facebook voor de laatste updates!",
+      "social": "Volg ons op social media"
+    },
+    "featured": {
+      "title": "Laatste Nieuws",
+      "items": [
+        {
+          "title": "We gaan verhuizen!",
+          "description": "Alles wat je moet weten als je net begint met functional training.",
+          "date": "4 oktober 2024",
+          "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=1000&fit=crop",
+          "content": "Yes het is ons eindelijk gelukt! We gaan verhuizen naar de Coehoornstraat 71T, Nijmegen. Een kilometertje van onze huidige lokatie af. En we gaan er zoveel op vooruit! Vooral veel meer ruimte dan dat we nu hebben, maar ook een beter binnenklimaat is iets waar we toch wel heel blij mee zijn. We zijn deze maand nog flink aan het klussen en het wordt elke dag een beetje mooier. Op zondag 3 november is de verhuizing."
+        },
+        {
+          "title": "Na de zomer starten de jeugdlessen",
+          "description": "Waarom snatch en clean & jerk zo effectief zijn voor krachtontwikkeling.",
+          "date": "5 juli 2023",
+          "image": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&h=1000&fit=crop",
+          "content": "Yes! Goed nieuws voor al die kinderen en jongeren die ook functioneel willen trainen (vergelijkbaar met Crossfit) en kennis willen maken met krachttraining! Na deze zomer (vanaf 31 augustus) starten we met 1 of 2 lessen speciaal voor de jeugd. Er zal veel aandacht zijn voor het aanleren van de juiste techniek en de trainingen zullen aansluiten bij de leeftijd van de deelnemers. Rick is onze vaste trainer hiervoor, omdat hij opgeleid is in het werken met jeugd en al zeer veel ervaring heeft met het aanbieden van sportlessen aan deze doelgroep. Gecombineerd met zijn enthousiasme verwachten we een veilige en leerzame les, maar vooral ook een leuke en gevarieerde training aan te bieden. Nu hebben we donderdags 16.30-17.15 uur in het rooster staan, maar gezien de vele interesse zou het kunnen dat er nog een les bij komt. Heeft je zoon of dochter interesse? Meld ze dan aan voor een gratis proefles!"
+        },
+        {
+          "title": "Kom ook in ‘Corona’-tijd lekker trainen!",
+          "description": "Tips van onze fysiotherapeut voor optimaal herstel na training.",
+          "date": "16 juni 2020",
+          "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=1000&fit=crop",
+          "content": "Sinds een paar weken mogen we weer buiten training geven! We hebben nu weer op alle dagen tijden waarop je je inschrijft en je weer een leuke, afwisselende training van ons krijgt zoals je van ons gewend was. Alleen nu buiten :-). Hopelijk mogen we over een paar weken ook weer binnen aan de slag. We zullen dan nog steeds veel buiten sporten als het weer het toelaat. Maar kunnen dan bij regen uitwijken naar binnen. En ook weer de mogelijkheden van de ruimte binnen gebruiken. Zoals de plankiers, ringen, het rek, etcetera. Ook in deze tijd zijn proeflessers welkom! Je kunt je via deze website voor een training aanmelden. Hoe makkelijk is dat!"
+        },
+        {
+          "title": "Clubwedstrijd gewichtheffen succes!",
+          "description": "Tips van onze fysiotherapeut voor optimaal herstel na training.",
+          "date": "5 maart 2020",
+          "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=1000&fit=crop",
+          "content": "Zaterdag 18 januari jl hadden we ons jaarlijkse gewichthefwedstrijd. Mooi om te zien hoe door deelname aan deze wedstrijd bij iedereen de focus en motivatie tijdens de training in de maanden voorafgaand toenamen. Deelnemers die pas net met gewichtheffen begonnen zijn en al ervaren atleten, je zag de concentratie en toch ook wel wat spanning op de gezichten op deze dag. Want om nu ineens 3 kansen per lift te krijgen, daarin je beste prestatie neer te willen zetten en ook nog eens terwijl er naar je gekeken wordt, is best spannend! Wat gaaf om te zien dat iedereen zo een goede prestatie neergezet heeft! Dat maakt ons alleen maar super trots op al onze atleten! Wij zijn benieuwd naar jullie prestaties volgend jaar!"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact | Sportloods Oost",
+      "description": "Neem contact met ons op voor vragen, een proefles of een kennismakingsgesprek. We helpen je graag verder!"
+    },
+    "hero": {
+      
+      "subtitle": "Vragen? We helpen je graag!"
+    },
+    "intro": {
+      "text": "Heb je vragen over ons aanbod, wil je een proefles boeken, of gewoon even langskomen voor een rondleiding? Neem gerust contact met ons op!"
+    },
+    "methods": {
+      "title": "Bereikbaarheid",
+      "items": [
+        {
+          "type": "phone",
+          "label": "Telefoon",
+          "value": "+31 (0)24 123 4567",
+          "note": "Bereikbaar op werkdagen van 9:00 - 18:00"
+        },
+        {
+          "type": "email",
+          "label": "Email",
+          "value": "info@sportloodsoost.nl",
+          "note": "We reageren binnen 24 uur"
+        },
+        {
+          "type": "location",
+          "label": "Adres",
+          "value": "Oude Kleefsebaan 1, 6572 AA Nijmegen",
+          "note": "Gratis parkeren voor de deur"
+        }
+      ]
+    },
+    "form": {
+      "title": "Stuur ons een bericht",
+      "fields": {
+        "name": {
+          "label": "Naam",
+          "placeholder": "Je volledige naam"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "je@email.nl"
+        },
+        "phone": {
+          "label": "Telefoon (optioneel)",
+          "placeholder": "+31 6 12345678"
+        },
+        "subject": {
+          "label": "Onderwerp",
+          "options": [
+            "Proefles boeken",
+            "Vraag over tarieven",
+            "Vraag over aanbod",
+            "Personal training",
+            "Jeugdtraining",
+            "Anders"
+          ]
+        },
+        "message": {
+          "label": "Bericht",
+          "placeholder": "Vertel ons waar we je mee kunnen helpen..."
+        }
+      },
+      "button": "Verstuur Bericht",
+      "success": "Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.",
+      "error": "Er ging iets mis. Probeer het opnieuw of bel ons direct."
+    },
+    "visit": {
+      "title": "Kom Langs",
+      "description": "Wil je de loods zien en het team ontmoeten? Je bent altijd welkom voor een rondleiding. Liefst van tevoren even bellen of mailen zodat we tijd voor je kunnen vrijmaken.",
+      "hours": "Maandag t/m vrijdag: 9:00 - 21:00"
+    },
+    "map": {
+      "title": "Routebeschrijving",
+      "description": "We zijn gevestigd aan de Oude Kleefsebaan in Nijmegen-Oost, vlakbij het centrum. Gratis parkeren voor de deur."
+    }
+  },
+  "login": {
+    "meta": {
+      "title": "Inloggen | Sportloods Oost",
+      "description": "Log in op je Sportloods Oost account om je trainingen te beheren."
+    },
+    "hero": {
+      "title": "Ledenportaal",
+      "subtitle": "Log in op je account"
+    },
+    "comingSoon": {
+      "title": "Binnenkort Beschikbaar",
+      "description": "We zijn bezig met het ontwikkelen van een ledenportaal waar je je trainingen kunt inplannen, je voortgang kunt bijhouden en meer. Voor nu kun je contact met ons opnemen voor het inplannen van lessen of vragen over je lidmaatschap.",
+      "button": "Contact Opnemen"
+    },
+    "features": {
+      "title": "Binnenkort in het Ledenportaal",
+      "items": [
+        "Lessen reserveren en beheren",
+        "Voortgang en PR's bijhouden",
+        "Trainingsschema's bekijken",
+        "Abonnement beheren",
+        "Berichten van coaches ontvangen"
+      ]
+    }
+  },
+  "footer": {
+    "tagline": "Functionele training",
+    "sections": {
+      "quick": {
+        "title": "Snel Naar",
+        "links": [
+          { "label": "Home", "href": "#home" },
+          { "label": "Over Ons", "href": "#about" },
+          { "label": "Aanbod", "href": "#offerings" },
+          { "label": "Tarieven", "href": "#tarieven" }
+        ]
+      },
+      "info": {
+        "title": "Informatie",
+        "links": [
+          { "label": "Openingstijden", "href": "#openingstijden" },
+          { "label": "Blog", "href": "#blog" },
+          { "label": "Team", "href": "#team" },
+          { "label": "Contact", "href": "#contact" }
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "items": [
+          "Oude Kleefsebaan 1",
+          "6572 AA Nijmegen",
+          "+31 (0)24 123 4567",
+          "info@sportloodsoost.nl"
+        ]
+      }
+    },
+    "social": {
+      "title": "Volg Ons"
+    },
+    "copyright": "© 2025 Sportloods Oost. Alle rechten voorbehouden."
+  },
+  "common": {
+    "buttons": {
+      "learnMore": "Meer Informatie",
+      "bookTrial": "Proefles Boeken",
+      "contact": "Contact Opnemen",
+      "readMore": "Lees Meer",
+      "viewAll": "Bekijk Alles",
+      "submit": "Versturen",
+      "close": "Sluiten",
+      "menu": "Menu",
+      "back": "Terug"
+    },
+    "labels": {
+      "phone": "Telefoon",
+      "email": "Email",
+      "address": "Adres",
+      "hours": "Openingstijden",
+      "price": "Prijs",
+      "popular": "Populair"
+    }
+  }
+}
