@@ -64,7 +64,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   // Add scroll event listener and update on mount
   React.useEffect(() => {
     const container = scrollContainerRef.current;
-    if (container) {
+    if (container && typeof window !== 'undefined') {
       // Force update after a brief delay to ensure DOM is ready
       setTimeout(() => {
         updateScrollButtons();
