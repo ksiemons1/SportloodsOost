@@ -1,4 +1,5 @@
-import type { Metadata } from 'next';
+'use client';
+
 import { CTASection, OfferingsSection, TeamCarousel, MissionStorySection, BlogCarousel } from '@/components/sections';
 import { Container, Section, Heading, Card, Badge, Button } from '@/components/ui';
 import content from '@/data/content.json';
@@ -7,11 +8,6 @@ import content from '@/data/content.json';
  * Home Page - Modern Single Page Layout with Colorful Sections
  * Inspired by contemporary web design with vibrant, section-specific colors
  */
-
-export const metadata: Metadata = {
-  title: content.home.meta.title,
-  description: content.home.meta.description,
-};
 
 export default function Home() {
   const { hero, mission, features, cta } = content.home;
@@ -83,7 +79,7 @@ export default function Home() {
             ];
             
             return (
-              <div key={index} className="relative h-[32rem] overflow-hidden group">
+              <div key={index} className="relative h-64 md:h-[32rem] overflow-hidden group">
                 {/* Background Image */}
                 <div
                   className="absolute inset-0 bg-cover bg-center"
@@ -108,7 +104,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-xs md:text-sm uppercase tracking-wide font-medium max-w-xs mt-6">
+                  <div className="text-sm md:text-base uppercase tracking-wide font-medium max-w-xs mt-6">
                     {value.description}
                   </div>
                 </div>
@@ -163,11 +159,18 @@ export default function Home() {
           
           {/* Memberships */}
           <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8">
+            <div className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 px-[calc(50vw-140px)] md:px-0 pt-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <style jsx>{`
+                div::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
               {memberships.items.map((membership, index) => (
                 <Card
                   key={index}
-                  className={`relative ${membership.popular ? 'border-2 border-primary-600 bg-primary-50' : ''}`}
+                  className={`relative flex-shrink-0 w-[280px] md:w-auto snap-center ${membership.popular ? 'border-2 border-primary-600 bg-primary-50' : ''}`}
                 >
                   {membership.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
@@ -197,12 +200,10 @@ export default function Home() {
                   </ul>
                 </Card>
               ))}
-            </div>
-            
-            {/* Full-width membership */}
-            <div className="max-w-5xl mx-auto">
-              <Card>
-                <div className="flex flex-col md:flex-row md:justify-between gap-24 pb-8">
+              
+              {/* Full-width membership - now part of carousel */}
+              <Card className="relative flex-shrink-0 w-[280px] md:w-auto snap-center md:col-span-3">
+                <div className="flex flex-col md:flex-row md:justify-between gap-6 md:gap-24 pb-0 md:pb-8">
                   <div className="text-center md:text-left md:min-w-[250px]">
                     <h4 className="text-2xl font-bold text-gray-900 mb-4">
                       {memberships.fullWidth.name}
@@ -256,8 +257,8 @@ export default function Home() {
                   const isCurrentDay = day.day === currentDay;
                   
                   return (
-                    <div key={index} className={`py-6 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 px-4 transition-colors ${isCurrentDay ? 'bg-primary-50' : ''}`}>
-                      <span className={`font-semibold min-w-[140px] text-lg ${isCurrentDay ? 'text-primary-700' : 'text-gray-900'}`}>{day.day}</span>
+                    <div key={index} className={`py-6 flex flex-row justify-between items-start gap-3 px-4 transition-colors ${isCurrentDay ? 'bg-primary-50' : ''}`}>
+                      <span className={`font-semibold min-w-[100px] md:min-w-[140px] text-lg ${isCurrentDay ? 'text-primary-700' : 'text-gray-900'}`}>{day.day}</span>
                       <div className="flex flex-col gap-2 text-right">
                         {day.ranges.map((range, rangeIndex) => {
                           const [startHour, startMin] = range.start.split(':').map(Number);

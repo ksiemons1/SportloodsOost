@@ -91,12 +91,17 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
                 ))}
               </ul>
             </div>
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="mt-6 lg:mt-8 text-primary-600 hover:text-primary-700 font-semibold transition-colors text-base lg:text-lg"
-            >
-              ← Terug naar overzicht
-            </button>
+            <div className="flex justify-center mt-6 lg:mt-8">
+              <button
+                onClick={() => setSelectedIndex(null)}
+                className="bg-primary-600 rounded-full p-3 w-12 h-12 flex items-center justify-center hover:bg-primary-700 transition-all shadow-lg"
+                aria-label="Sluiten"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       ) : (
@@ -106,7 +111,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="flex overflow-x-auto gap-4 md:gap-8 justify-start md:justify-center animate-fadeIn px-4 md:px-0 snap-x snap-mandatory touch-pan-y"
+          className="flex overflow-x-auto gap-4 md:gap-8 justify-start md:justify-center animate-fadeIn snap-x snap-mandatory touch-pan-y px-[calc(50vw-140px)] md:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <style jsx>{`
@@ -134,9 +139,17 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
               {/* Name and role at bottom - left aligned */}
               <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-8 text-left">
                 <h3 className="text-white font-bold text-2xl lg:text-4xl mb-1 lg:mb-2">{member.name}</h3>
-                <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium">
-                  {member.role}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium">
+                    {member.role}
+                  </span>
+                  {/* Tap indicator - visible only on mobile */}
+                  <div className="md:hidden bg-white/90 backdrop-blur-sm rounded-full p-1.5 h-[28px] w-[28px] flex items-center justify-center">
+                    <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </button>
           ))}

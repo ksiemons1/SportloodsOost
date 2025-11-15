@@ -47,9 +47,9 @@ export const MissionStorySection: React.FC<MissionStoryProps> = ({ mission, stor
 
       {/* Right side - Content */}
       <div className="lg:col-span-2">
-        <div className="relative transition-all duration-500 ease-in-out" style={{ minHeight: '600px' }}>
+        <div className="relative transition-all duration-500 ease-in-out" style={{ minHeight: window.innerWidth >= 1024 ? '600px' : 'auto' }}>
           {activeTab === 'mission' && (
-            <div className="absolute inset-0 animate-fadeIn">
+            <div className="lg:absolute lg:inset-0 animate-fadeIn">
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 {mission.description}
               </p>
@@ -57,7 +57,7 @@ export const MissionStorySection: React.FC<MissionStoryProps> = ({ mission, stor
           )}
           
           {activeTab === 'story' && (
-            <div className="absolute inset-0 animate-fadeIn space-y-6">
+            <div className="lg:absolute lg:inset-0 animate-fadeIn space-y-6">
               {story.content.map((paragraph, index) => (
                 <p key={index} className="text-lg md:text-xl text-gray-700 leading-relaxed">
                   {paragraph}

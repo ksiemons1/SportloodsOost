@@ -97,7 +97,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
               });
             } else {
               // Otherwise scroll right
-              const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424;
+              const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 524;
               scrollContainerRef.current.scrollTo({
                 left: scrollLeft + scrollAmount,
                 behavior: 'smooth'
@@ -125,7 +125,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
 
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424; // 300px + 24px gap (mobile) or 400px + 24px gap (desktop)
+      const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424; // mobile: 300+24, desktop: 400+24
       
       if (direction === 'left') {
         // If at the start, jump to the end
@@ -211,25 +211,41 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
             <p className="text-gray-700 leading-relaxed text-lg">
               {selectedPost.content || selectedPost.description}
             </p>
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="mt-8 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
-            >
-              ← Terug naar overzicht
-            </button>
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={() => setSelectedIndex(null)}
+                className="bg-primary-600 rounded-full p-3 w-12 h-12 flex items-center justify-center hover:bg-primary-700 transition-all shadow-lg"
+                aria-label="Sluiten"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       ) : (
         /* Carousel view - Scrollable cards with partial 4th card visible */
-        <div className="flex items-center justify-center gap-3 md:gap-6 w-full px-2 md:px-0">
-          {/* Left Arrow - Hidden on mobile */}
+        <div className="relative w-full flex items-center justify-center">
+          {/* Left Arrow - Outside container */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex bg-primary-600 hover:bg-primary-700 text-white rounded-full p-3 transition-all hover:scale-110 shadow-lg flex-shrink-0"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
             aria-label="Previous"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Right Arrow - Outside container */}
+          <button
+            onClick={() => scroll('right')}
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
+            aria-label="Next"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
@@ -239,25 +255,33 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
-            className="overflow-hidden animate-fadeIn w-full md:w-auto touch-pan-y"
+            className="overflow-x-auto animate-fadeIn touch-pan-y w-full snap-x snap-mandatory carousel-scroll-container"
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              width: '100%',
-              maxWidth: '1248px',
             }}
           >
             <style jsx>{`
-              div::-webkit-scrollbar {
+              @media (min-width: 768px) {
+                .carousel-scroll-container {
+                  width: 1248px !important;
+                  max-width: 1248px;
+                  min-width: 1248px;
+                  margin: 0 auto;
+                }
+              }
+            `}</style>
+            <style jsx>{`
+              .carousel-scroll-container::-webkit-scrollbar {
                 display: none;
               }
             `}</style>
-            <div className="flex gap-4 md:gap-6" style={{ width: 'max-content' }}>
+            <div className="flex gap-4 md:gap-6 px-[calc(50vw-150px)] md:px-0" style={{ width: 'max-content' }}>
               {posts.map((post, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedIndex(index)}
-                  className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0 w-[300px] h-[400px] md:w-[400px] md:h-[500px]"
+                  className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0 w-[300px] h-[400px] md:w-[400px] md:h-[500px] snap-center"
                 >
                   {/* Image */}
                   <div className="absolute inset-0">
@@ -266,14 +290,16 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                       alt={post.title}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   </div>
                   
                   {/* Title and date at bottom - left aligned */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-left">
-                    <h3 className="text-white font-bold text-3xl mb-3 leading-tight">{post.title}</h3>
-                    <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-left z-10">
+                    <h3 className="text-white font-bold text-lg md:text-xl mb-2 leading-tight w-[268px] md:w-[352px]" style={{ 
+                      wordBreak: 'break-word',
+                      hyphens: 'auto',
+                      textShadow: '0 2px 4px rgba(0,0,0,0.8)'
+                    }}>{post.title}</h3>
+                    <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
                       {post.date}
                     </span>
                   </div>
@@ -281,17 +307,6 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
               ))}
             </div>
           </div>
-
-          {/* Right Arrow - Always visible */}
-          <button
-            onClick={() => scroll('right')}
-            className="bg-primary-600 hover:bg-primary-700 text-white rounded-full p-3 transition-all hover:scale-110 shadow-lg flex-shrink-0"
-            aria-label="Next"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
         </div>
       )}
     </div>
