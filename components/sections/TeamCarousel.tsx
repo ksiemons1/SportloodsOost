@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 interface TeamMember {
   name: string;
@@ -16,16 +16,43 @@ interface TeamCarouselProps {
 
 export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   const selectedMember = selectedIndex !== null ? members[selectedIndex] : null;
+
+  // Touch handlers for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    const threshold = 50; // Minimum swipe distance
+    
+    if (Math.abs(diff) > threshold && scrollContainerRef.current) {
+      if (diff > 0) {
+        // Swiped left - scroll right
+        scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      } else {
+        // Swiped right - scroll left
+        scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <div className="transition-all duration-500 ease-in-out">
       {selectedMember ? (
         /* Selected view - Portrait left, Text right */
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start animate-fadeIn" style={{ minHeight: '500px' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start animate-fadeIn px-4 lg:px-0" style={{ minHeight: '400px' }}>
           {/* Portrait - Left side */}
-          <div className="animate-slideInLeft" style={{ height: '500px', maxWidth: '400px' }}>
+          <div className="animate-slideInLeft mx-auto w-full" style={{ height: '400px', maxWidth: '400px' }}>
             <button
               onClick={() => setSelectedIndex(null)}
               className="w-full h-full group cursor-pointer"
@@ -42,31 +69,31 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
 
           {/* Text - Right side */}
           <div className="animate-slideInRight">
-            <h3 className="text-4xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
               {selectedMember.name}
             </h3>
-            <p className="text-primary-600 font-semibold text-xl mb-8">
+            <p className="text-primary-600 font-semibold text-lg lg:text-xl mb-6 lg:mb-8">
               {selectedMember.role}
             </p>
-            <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+            <p className="text-gray-700 mb-6 lg:mb-8 leading-relaxed text-base lg:text-lg">
               {selectedMember.bio}
             </p>
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4 text-xl">
+              <h4 className="font-semibold text-gray-900 mb-3 lg:mb-4 text-lg lg:text-xl">
                 Kwalificaties:
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 lg:space-y-3">
                 {selectedMember.certifications.map((cert, i) => (
                   <li key={i} className="text-gray-700 flex items-start">
-                    <span className="text-primary-600 mr-3 text-xl">✓</span>
-                    <span className="text-lg">{cert}</span>
+                    <span className="text-primary-600 mr-2 lg:mr-3 text-lg lg:text-xl">✓</span>
+                    <span className="text-base lg:text-lg">{cert}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <button
               onClick={() => setSelectedIndex(null)}
-              className="mt-8 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+              className="mt-6 lg:mt-8 text-primary-600 hover:text-primary-700 font-semibold transition-colors text-base lg:text-lg"
             >
               ← Terug naar overzicht
             </button>
@@ -74,13 +101,24 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
         </div>
       ) : (
         /* Default view - Modern card design like example */
-        <div className="flex flex-col md:flex-row justify-center gap-8 animate-fadeIn">
+        <div 
+          ref={scrollContainerRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="flex overflow-x-auto gap-4 md:gap-8 justify-start md:justify-center animate-fadeIn px-4 md:px-0 snap-x snap-mandatory touch-pan-y"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
           {members.map((member, index) => (
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300"
-              style={{ width: '100%', maxWidth: '400px', height: '500px' }}
+              className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0 snap-center w-[280px] h-[400px] md:w-[400px] md:h-[500px]"
             >
               {/* Portrait with grayscale */}
               <div className="absolute inset-0">
@@ -94,9 +132,9 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
               </div>
               
               {/* Name and role at bottom - left aligned */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-left">
-                <h3 className="text-white font-bold text-4xl mb-2">{member.name}</h3>
-                <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+              <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-8 text-left">
+                <h3 className="text-white font-bold text-2xl lg:text-4xl mb-1 lg:mb-2">{member.name}</h3>
+                <span className="inline-block bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium">
                   {member.role}
                 </span>
               </div>

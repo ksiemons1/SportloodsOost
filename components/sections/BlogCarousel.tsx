@@ -17,33 +17,169 @@ interface BlogCarouselProps {
 
 export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const autoScrollIntervalRef = React.useRef<NodeJS.Timeout | null>(null);
+  const touchStartX = React.useRef<number>(0);
+  const touchEndX = React.useRef<number>(0);
 
   const selectedPost = selectedIndex !== null ? posts[selectedIndex] : null;
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 420; // card width (400) + gap (20)
-      const newPosition = direction === 'left' 
-        ? Math.max(0, scrollPosition - scrollAmount)
-        : Math.min(
-            scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth,
-            scrollPosition + scrollAmount
-          );
-      
-      scrollContainerRef.current.scrollTo({
-        left: newPosition,
-        behavior: 'smooth'
-      });
-      setScrollPosition(newPosition);
+  // Handle touch start
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  // Handle touch move
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  // Handle touch end
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    const threshold = 50; // Minimum swipe distance
+    
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        // Swiped left - scroll right
+        scroll('right');
+      } else {
+        // Swiped right - scroll left
+        scroll('left');
+      }
     }
   };
 
-  const canScrollLeft = scrollPosition > 0;
-  const canScrollRight = scrollContainerRef.current 
-    ? scrollPosition < scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth
-    : false;
+  // Update scroll button visibility
+  const updateScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  // Add scroll event listener and update on mount
+  React.useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      // Force update after a brief delay to ensure DOM is ready
+      setTimeout(() => {
+        updateScrollButtons();
+      }, 100);
+      
+      container.addEventListener('scroll', updateScrollButtons);
+      window.addEventListener('resize', updateScrollButtons);
+      
+      return () => {
+        container.removeEventListener('scroll', updateScrollButtons);
+        window.removeEventListener('resize', updateScrollButtons);
+      };
+    }
+  }, []);
+
+  // Auto scroll effect
+  React.useEffect(() => {
+    if (selectedIndex === null) {
+      // Start auto scroll after initial delay
+      const startDelay = setTimeout(() => {
+        autoScrollIntervalRef.current = setInterval(() => {
+          if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            
+            // If we can't scroll right anymore, scroll back to start
+            if (scrollLeft >= scrollWidth - clientWidth - 10) {
+              scrollContainerRef.current.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+              });
+            } else {
+              // Otherwise scroll right
+              const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424;
+              scrollContainerRef.current.scrollTo({
+                left: scrollLeft + scrollAmount,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }, 4000); // Auto scroll every 4 seconds
+      }, 1000); // Initial delay of 1 second
+
+      return () => {
+        clearTimeout(startDelay);
+        if (autoScrollIntervalRef.current) {
+          clearInterval(autoScrollIntervalRef.current);
+        }
+      };
+    }
+  }, [selectedIndex]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    // Clear auto scroll when manually scrolling
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+    }
+
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424; // 300px + 24px gap (mobile) or 400px + 24px gap (desktop)
+      
+      if (direction === 'left') {
+        // If at the start, jump to the end
+        if (scrollLeft <= 10) {
+          scrollContainerRef.current.scrollTo({
+            left: scrollWidth - clientWidth,
+            behavior: 'smooth'
+          });
+        } else {
+          scrollContainerRef.current.scrollTo({
+            left: Math.max(0, scrollLeft - scrollAmount),
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        // If at the end, jump to the start
+        if (scrollLeft >= scrollWidth - clientWidth - 10) {
+          scrollContainerRef.current.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          scrollContainerRef.current.scrollTo({
+            left: scrollLeft + scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+
+    // Restart auto scroll after manual interaction
+    setTimeout(() => {
+      if (selectedIndex === null && autoScrollIntervalRef.current === null) {
+        autoScrollIntervalRef.current = setInterval(() => {
+          if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            
+            if (scrollLeft >= scrollWidth - clientWidth - 10) {
+              scrollContainerRef.current.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+              });
+            } else {
+              const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424;
+              scrollContainerRef.current.scrollTo({
+                left: scrollLeft + scrollAmount,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }, 4000);
+      }
+    }, 8000); // Wait 8 seconds before restarting auto scroll
+  };
 
   return (
     <div className="transition-all duration-500 ease-in-out">
@@ -85,40 +221,30 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
         </div>
       ) : (
         /* Carousel view - Scrollable cards with partial 4th card visible */
-        <div className="relative">
-          {/* Navigation Arrows */}
-          {canScrollLeft && (
-            <button
-              onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all hover:scale-110"
-              aria-label="Previous"
-            >
-              <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-          )}
-          
-          {canScrollRight && (
-            <button
-              onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all hover:scale-110"
-              aria-label="Next"
-            >
-              <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          )}
+        <div className="flex items-center justify-center gap-3 md:gap-6 w-full px-2 md:px-0">
+          {/* Left Arrow - Hidden on mobile */}
+          <button
+            onClick={() => scroll('left')}
+            className="hidden md:flex bg-primary-600 hover:bg-primary-700 text-white rounded-full p-3 transition-all hover:scale-110 shadow-lg flex-shrink-0"
+            aria-label="Previous"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
           {/* Scrollable Container */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-hidden animate-fadeIn mx-auto"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            className="overflow-hidden animate-fadeIn w-full md:w-auto touch-pan-y"
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              maxWidth: 'calc(1200px + 200px)', // 3 full cards (400*3) + gaps (24*2) + half of 4th card (200)
+              width: '100%',
+              maxWidth: '1248px',
             }}
           >
             <style jsx>{`
@@ -126,13 +252,12 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                 display: none;
               }
             `}</style>
-            <div className="flex gap-6" style={{ width: 'max-content', paddingRight: '200px' }}>
+            <div className="flex gap-4 md:gap-6" style={{ width: 'max-content' }}>
               {posts.map((post, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedIndex(index)}
-                  className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0"
-                  style={{ width: '400px', height: '500px' }}
+                  className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0 w-[300px] h-[400px] md:w-[400px] md:h-[500px]"
                 >
                   {/* Image */}
                   <div className="absolute inset-0">
@@ -156,6 +281,17 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
               ))}
             </div>
           </div>
+
+          {/* Right Arrow - Always visible */}
+          <button
+            onClick={() => scroll('right')}
+            className="bg-primary-600 hover:bg-primary-700 text-white rounded-full p-3 transition-all hover:scale-110 shadow-lg flex-shrink-0"
+            aria-label="Next"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       )}
     </div>

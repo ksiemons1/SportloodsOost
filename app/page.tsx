@@ -310,9 +310,9 @@ export default function Home() {
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
             Blijf op de hoogte van de laatste nieuwtjes, trainingstips en updates uit de loods.
           </p>
-
-          <BlogCarousel posts={featured.items} />
         </Container>
+        
+        <BlogCarousel posts={featured.items} />
       </Section>
 
       {/* Contact Section */}
