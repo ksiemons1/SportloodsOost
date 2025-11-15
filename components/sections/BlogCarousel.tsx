@@ -259,6 +259,8 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
+              scrollPaddingLeft: 'calc(50vw - 150px)',
+              scrollPaddingRight: 'calc(50vw - 150px)'
             }}
           >
             <style jsx>{`

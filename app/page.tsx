@@ -151,22 +151,23 @@ export default function Home() {
       </Section>
 
       {/* Pricing Section */}
-      <Section background="white" id="tarieven">
-        <Container>
-          <Heading level={2} className="text-center mb-12">
+      <section id="tarieven" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6 mb-12">
+          <Heading level={2} className="text-center">
             Tarieven
           </Heading>
+        </div>
           
-          {/* Memberships */}
-          <div className="mb-16">
-            <div className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 px-[calc(50vw-140px)] md:px-0 pt-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              <style jsx>{`
-                div::-webkit-scrollbar {
-                  display: none;
-                }
-              `}</style>
+        {/* Memberships */}
+        <div className="mb-16">
+          <div className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl md:mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 md:px-0"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', scrollPaddingLeft: 'calc(50vw - 140px)', scrollPaddingRight: 'calc(50vw - 140px)' }}
+          >
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
               {memberships.items.map((membership, index) => (
                 <Card
                   key={index}
@@ -231,8 +232,7 @@ export default function Home() {
               </Card>
             </div>
           </div>
-        </Container>
-      </Section>
+      </section>
 
       {/* Opening Times Section */}
       <Section background="gray" id="openingstijden">
