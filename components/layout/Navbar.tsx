@@ -19,20 +19,26 @@ export const Navbar: React.FC = () => {
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
-      const targetId = href.slice(1);
-      const element = document.getElementById(targetId);
       
-      if (element && typeof window !== 'undefined') {
-        const offset = 80; // Account for fixed navbar height
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
+      // Close mobile menu first
       setMobileMenuOpen(false);
+      
+      // Wait for menu to close, then scroll
+      setTimeout(() => {
+        const targetId = href.slice(1);
+        const element = document.getElementById(targetId);
+        
+        if (element && typeof window !== 'undefined') {
+          const offset = 80; // Account for fixed navbar height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
   };
 
