@@ -276,7 +276,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                 display: none;
               }
             `}</style>
-            <div className="flex gap-4 md:gap-6 px-[calc(50vw-150px)] md:px-0" style={{ width: 'max-content' }}>
+            <div className="flex gap-4 md:gap-6 md:px-0" style={{ width: 'max-content' }}>
               {posts.map((post, index) => (
                 <button
                   key={index}

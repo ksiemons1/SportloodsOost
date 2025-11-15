@@ -122,9 +122,9 @@ export default function Home() {
       </Section>
 
       {/* Team */}
-      <Section background="white" className="!pt-8 !pb-32">
-        <Container>
-          <div className="text-center mb-12">
+      <section className="py-8 md:py-16 pb-32 bg-white">
+        <div className="container mx-auto px-4 md:px-6 mb-12">
+          <div className="text-center">
             <Heading level={2}>
               {team.title}
             </Heading>
@@ -132,9 +132,9 @@ export default function Home() {
               {team.intro}
             </p>
           </div>
-          <TeamCarousel members={team.members} />
-        </Container>
-      </Section>
+        </div>
+        <TeamCarousel members={team.members} />
+      </section>
 
       {/* Offerings Section */}
       <Section background="gray" id="offerings">
@@ -302,19 +302,19 @@ export default function Home() {
       />
 
       {/* Blog Section */}
-      <Section background="white" id="blog">
-        <Container>
+      <section id="blog" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6 mb-12">
           <Heading level={2} className="text-center mb-6">
             {featured.title}
           </Heading>
 
-          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
             Blijf op de hoogte van de laatste nieuwtjes, trainingstips en updates uit de loods.
           </p>
-        </Container>
+        </div>
         
         <BlogCarousel posts={featured.items} />
-      </Section>
+      </section>
 
       {/* Contact Section */}
       <Section background="gray" id="contact">
