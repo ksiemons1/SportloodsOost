@@ -157,7 +157,7 @@ export default function Home() {
                   href="#tarieven"
                   variant="primary"
                   size="lg"
-                  className="font-bold text-lg px-8 py-4 hover:bg-white hover:text-primary-600 transition-colors"
+                  className="font-bold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 hover:bg-white hover:text-primary-600 transition-colors whitespace-nowrap"
                 >
                   {hero.cta.primary}
                 </Button>
@@ -166,7 +166,7 @@ export default function Home() {
                   href="#location"
                   variant="secondary"
                   size="lg"
-                  className="font-bold text-lg px-8 py-4 bg-white text-primary-600 hover:bg-primary-600 hover:text-white transition-colors"
+                  className="font-bold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-white text-primary-600 hover:bg-primary-600 hover:text-white transition-colors whitespace-nowrap"
                 >
                   {hero.cta.secondary}
                 </Button>
