@@ -19,6 +19,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isTouching, setIsTouching] = useState(false);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   const autoScrollIntervalRef = React.useRef<NodeJS.Timeout | null>(null);
   const touchStartX = React.useRef<number>(0);
@@ -33,6 +34,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   // Handle touch start
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
+    setIsTouching(true);
   };
 
   // Handle touch move
@@ -54,6 +56,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
         scroll('left');
       }
     }
+    setIsTouching(false);
   };
 
   // Update scroll button visibility
@@ -86,7 +89,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
 
   // Auto scroll effect - continuous smooth scrolling
   React.useEffect(() => {
-    if (selectedIndex === null && typeof window !== 'undefined') {
+    if (selectedIndex === null && !isTouching && typeof window !== 'undefined') {
       const cardWidth = window.innerWidth < 768 ? 300 : 400;
       const gap = 24;
       const itemWidth = cardWidth + gap;
@@ -109,7 +112,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
 
       return () => clearInterval(intervalId);
     }
-  }, [selectedIndex, posts.length]);
+  }, [selectedIndex, isTouching, posts.length]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -203,11 +206,12 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
-            className="overflow-x-auto animate-fadeIn touch-pan-y w-full carousel-scroll-container"
+            className="overflow-x-scroll animate-fadeIn w-full carousel-scroll-container"
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              scrollBehavior: 'auto'
+              scrollBehavior: 'auto',
+              WebkitOverflowScrolling: 'touch'
             }}
           >
             <style jsx>{`
