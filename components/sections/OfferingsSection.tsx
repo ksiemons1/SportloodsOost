@@ -147,7 +147,7 @@ export const OfferingsSection: React.FC<OfferingsSectionProps> = ({ programs }) 
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           {program.features.map((feature, i) => (
-                            <li key={i} className="text-sm text-gray-700 flex items-start">
+                            <li key={i} className="text-base text-gray-700 flex items-start">
                               <span className="text-primary-600 mr-2">✓</span>
                               {feature}
                             </li>
@@ -189,9 +189,6 @@ export const OfferingsSection: React.FC<OfferingsSectionProps> = ({ programs }) 
                           {program.title}
                         </h3>
                       </div>
-                      <p className="text-primary-600 font-semibold text-sm">
-                        {program.tagline}
-                      </p>
                     </div>
                     <svg
                       className={`w-6 h-6 text-gray-400 transition-transform flex-shrink-0 ml-4 ${
@@ -214,6 +211,9 @@ export const OfferingsSection: React.FC<OfferingsSectionProps> = ({ programs }) 
                 {expandedIndex === index && (
                   <div className="px-6 pb-6 border-t border-gray-200">
                     <div className="pt-6">
+                      <p className="text-primary-600 font-semibold text-base mb-4">
+                        {program.tagline}
+                      </p>
                       <p className="text-gray-700 mb-6 leading-relaxed">
                         {program.description}
                       </p>

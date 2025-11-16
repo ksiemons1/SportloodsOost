@@ -19,17 +19,17 @@
   },
   "nav": {
     "items": [
-      { "label": "Home", "href": "#home" },
       { "label": "Over Ons", "href": "#about" },
       { "label": "Aanbod", "href": "#offerings" },
       { "label": "Tarieven", "href": "#tarieven" },
       { "label": "Openingstijden", "href": "#openingstijden" },
       { "label": "Locatie", "href": "#location" },
-      { "label": "Contact", "href": "#contact" }
+      { "label": "Contact", "href": "#contact" },
+      { "label": "Inloggen", "href": "/login" }
     ],
     "cta": {
-      "label": "Inloggen",
-      "href": "/login"
+      "label": "Proefles Boeken",
+      "href": "#contact"
     }
   },
   "home": {
@@ -135,7 +135,7 @@
         },
         {
           "name": "Lieke Hermans",
-          "role": "Oprichter, trainer & fysiotherapeut",
+          "role": "Oprichter & trainer",
           "bio": [
             "Lieke heeft 15 jaar als fysiotherapeute in een revalidatiecentrum gewerkt en geeft daarbij al sinds 2006 sportlessen. Zij begon met groepslessen in een sportschool en sinds 2014 werkt zij ook als personal trainer en vitaliteitscoach.",
             "Na diverse sporten beoefend te hebben, waarvan dansen haar grootste passie was, heeft zij op 38-jarige leeftijd het Olympisch gewichtheffen ontdekt. Naast het gewichtheffen heeft zij nu ook Crossfit opgepakt.",
@@ -380,6 +380,71 @@
       "description": "Boek je gratis proefles of neem contact op voor vragen.",
       "button": "Proefles Boeken"
     }
+  },
+  "testimonials": {
+    "title": "Wat Onze Leden Zeggen",
+    "items": [
+      {
+        "id": "1",
+        "name": "Koen K.",
+        "text": "Rustige gym met kundige trainers die de tijd voor je nemen. Ze geven aanwijzingen waar nodig en moedigen je aan. Elke keer als je komt sporten zijn er nieuwe workouts voor ieder niveau. De sfeer is gemoedelijk, de mensen zijn bezig met sporten en niet met hun telefoons.",
+        "rating": 5
+      },
+      {
+        "id": "2",
+        "name": "Janneke W.",
+        "text": "Hele fijne plek om te sporten. Er is altijd aandacht voor iedere sporter op elk niveau. Jeffrey en Lieke zorgen voor een fijne sfeer en meer dan voldoende uitdaging.",
+        "rating": 5
+      },
+      {
+        "id": "3",
+        "name": "Anke K.",
+        "text": "Héérlijke plek om te sporten. Op je eigen niveau, met extra uitdaging, alles kan. Goede begeleiding, persoonlijke benadering. Fijne sfeer, leuke trainingen met diversiteit, ruime openingstijden, goede trainingsmaterialen.",
+        "rating": 5
+      },
+      {
+        "id": "4",
+        "name": "Fred K.",
+        "text": "Krachtige formule die ruimte geeft voor elk niveau van (kracht)sporter en crossfitter.",
+        "rating": 5
+      },
+      {
+        "id": "5",
+        "name": "Krystle van D.",
+        "text": "Fijne sportschool, leuke mensen! Je kan meedoen aan alle WOD's, maar ook lekker zelf sporten als je daar meer zin in hebt. Ik train er nu ruim 3 jaar en heb altijd zin om te gaan.",
+        "rating": 5
+      },
+      {
+        "id": "6",
+        "name": "Ramona F.",
+        "text": "Zeer tevreden over deze fijne plek! De afwisseling in de trainingen en de goede sfeer die er hangt, maakt sporten nog leuker💪🏻",
+        "rating": 5
+      },
+      {
+        "id": "7",
+        "name": "Gerrit J.",
+        "text": "Sportloodsoost is een zeer aangenaame plaats om te sporten. Zeer aan te bevelen voor iedereen die graag wil sporten op hoog en laag niveau in relaxte sfeer.",
+        "rating": 5
+      },
+      {
+        "id": "8",
+        "name": "Herman J.",
+        "text": "Hele fijne plek voor crossfit en gewichtheffen. De persoonlijke aandacht van Jeffrey en Lieke is altijd fijn. Goede sfeer, veel humor en leuk contact tussen de sporters onderling.",
+        "rating": 5
+      },
+      {
+        "id": "9",
+        "name": "Liane van de B.",
+        "text": "De afgelopen jaren heb ik hier ontzettend veel geleerd op het gebied van olympisch gewichtheffen en crossfit. En ik leer nog iedere dag bij! Een heerlijke en ongedwongen gym waar iedereen op zijn eigen niveau kan sporten en waar ruimte is voor leuke contacten en een grapje.",
+        "rating": 5
+      },
+      {
+        "id": "10",
+        "name": "Rens de G.",
+        "text": "Ik sport hier sinds September 2022. Het is een erg fijne gym, met goede faciliteiten en begeleiding. De sfeer tussen de leden is goed. Ik kan iedereen die naar een gym opzoek is zeker aanraden om eens bij Sportloodsoost te gaan kijken.",
+        "rating": 5
+      }
+    ]
   },
   "openingstijden": {
     "meta": {

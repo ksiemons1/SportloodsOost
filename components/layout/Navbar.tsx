@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex items-center h-20">
           {/* Logo */}
           <a 
             href="#home" 
@@ -57,8 +57,8 @@ export const Navbar: React.FC = () => {
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
             {nav.items.map((item) => (
               <a
                 key={item.href}
@@ -70,18 +70,24 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
           </div>
-
-          {/* CTA Button - Desktop */}
+          
+          {/* CTA Button - Right */}
           <div className="hidden lg:block">
-            <Button href={nav.cta.href} variant="primary" size="md">
-              {nav.cta.label}
-            </Button>
+            <a
+              href={nav.cta.href}
+              onClick={(e) => handleAnchorClick(e, nav.cta.href)}
+              className="inline-block"
+            >
+              <Button variant="primary" size="md">
+                {nav.cta.label}
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-600 hover:text-primary-600 focus:outline-none"
+            className="lg:hidden p-2 text-gray-600 hover:text-primary-600 focus:outline-none ml-auto"
             aria-label={content.common.buttons.menu}
           >
             <svg

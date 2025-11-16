@@ -17,13 +17,13 @@ export const MissionStorySection: React.FC<MissionStoryProps> = ({ mission, stor
   const [activeTab, setActiveTab] = useState<'mission' | 'story'>('mission');
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 py-12">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
       {/* Left side - Clickable titles */}
       <div className="lg:col-span-1">
         <div className="space-y-4">
           <button
             onClick={() => setActiveTab('mission')}
-            className={`text-left w-full text-3xl md:text-4xl lg:text-5xl font-bold transition-colors duration-300 ${
+            className={`text-left w-full text-3xl md:text-4xl lg:text-5xl font-bold transition-colors ${
               activeTab === 'mission'
                 ? 'text-primary-600'
                 : 'text-gray-300 hover:text-gray-400'
@@ -34,7 +34,7 @@ export const MissionStorySection: React.FC<MissionStoryProps> = ({ mission, stor
           
           <button
             onClick={() => setActiveTab('story')}
-            className={`text-left w-full text-3xl md:text-4xl lg:text-5xl font-bold transition-colors duration-300 ${
+            className={`text-left w-full text-3xl md:text-4xl lg:text-5xl font-bold transition-colors ${
               activeTab === 'story'
                 ? 'text-primary-600'
                 : 'text-gray-300 hover:text-gray-400'
