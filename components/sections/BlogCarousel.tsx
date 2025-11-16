@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Badge } from '@/components/ui';
 
 interface BlogPost {
@@ -8,6 +9,7 @@ interface BlogPost {
   description: string;
   date: string;
   image: string;
+  imageAlt?: string;
   content?: string;
 }
 
@@ -87,9 +89,12 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
     }
   }, []);
 
-  // Auto scroll effect - continuous smooth scrolling
+  // Auto scroll effect - continuous smooth scrolling (desktop only)
   React.useEffect(() => {
     if (selectedIndex === null && !isTouching && typeof window !== 'undefined') {
+      // Only auto-scroll on desktop
+      if (window.innerWidth < 768) return;
+      
       const cardWidth = window.innerWidth < 768 ? 300 : 400;
       const gap = 24;
       const itemWidth = cardWidth + gap;
@@ -144,10 +149,12 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
               className="w-full h-full group cursor-pointer"
             >
               <div className="w-full h-full bg-gray-900 overflow-hidden hover:ring-4 hover:ring-primary-300 transition-all">
-                <img
+                <Image
                   src={selectedPost.image}
-                  alt={selectedPost.title}
-                  className="w-full h-full object-cover object-center transition-transform group-hover:scale-105"
+                  alt={selectedPost.imageAlt || selectedPost.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover object-center transition-transform group-hover:scale-105"
                 />
               </div>
             </button>
@@ -228,10 +235,12 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                 >
                   {/* Image */}
                   <div className="absolute inset-0">
-                    <img
+                    <Image
                       src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      alt={post.imageAlt || post.title}
+                      fill
+                      sizes="(max-width: 768px) 300px, 400px"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   

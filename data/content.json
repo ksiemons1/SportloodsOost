@@ -44,7 +44,8 @@
         "primary": "Proefles Boeken",
         "secondary": "Bezoek Ons"
       },
-      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop"
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop",
+      "imageAlt": "Groep atleten tijdens functional training bij Sportloods Oost Nijmegen"
     },
     "mission": {
       "title": "Onze Filosofie",
@@ -127,6 +128,7 @@
             "Jeffrey is zelf uit de wedstrijdsporten gegaan en legt zich nu volledig op het trainen en coachen van atleten. Sporten blijft zijn tweede natuur en heeft nu in Crossfit een goede uitdaging gevonden."
             ],
           "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=faces",
+          "imageAlt": "Jeffrey Meeuwsen - Oprichter, CrossFit trainer en gewichthef coach",
           "certifications": [
             "CrossFit Level 2 Trainer",
             "gewichtheffen Coach",
@@ -142,6 +144,7 @@
             "Lieke heeft als fysiotherapeute en fysiek trainer ook heel veel vrouwen mogen begeleiden tijdens hun zwangerschap en na hun bevalling. Want juist ook als je zwanger bent is het zo belangrijk om te blijven sporten en sterk en fit te blijven!"
           ],
           "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=faces",
+          "imageAlt": "Lieke Hermans - Oprichter, fysiotherapeut en certified strength coach",
           "certifications": [
             "Fysiotherapeut BIG-geregistreerd",
             "Gecertificeerd Strength Coach",
@@ -537,6 +540,7 @@
           "description": "Alles wat je moet weten als je net begint met functional training.",
           "date": "4 oktober 2024",
           "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=1000&fit=crop",
+          "imageAlt": "Nieuwe locatie Sportloods Oost Coehoornstraat 71 Nijmegen",
           "content": "Yes het is ons eindelijk gelukt! We gaan verhuizen naar de Coehoornstraat 71T, Nijmegen. Een kilometertje van onze huidige lokatie af. En we gaan er zoveel op vooruit! Vooral veel meer ruimte dan dat we nu hebben, maar ook een beter binnenklimaat is iets waar we toch wel heel blij mee zijn. We zijn deze maand nog flink aan het klussen en het wordt elke dag een beetje mooier. Op zondag 3 november is de verhuizing."
         },
         {
@@ -544,13 +548,15 @@
           "description": "Waarom snatch en clean & jerk zo effectief zijn voor krachtontwikkeling.",
           "date": "5 juli 2023",
           "image": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&h=1000&fit=crop",
+          "imageAlt": "Jeugdtraining functional training voor kinderen bij Sportloods Oost",
           "content": "Yes! Goed nieuws voor al die kinderen en jongeren die ook functioneel willen trainen (vergelijkbaar met Crossfit) en kennis willen maken met krachttraining! Na deze zomer (vanaf 31 augustus) starten we met 1 of 2 lessen speciaal voor de jeugd. Er zal veel aandacht zijn voor het aanleren van de juiste techniek en de trainingen zullen aansluiten bij de leeftijd van de deelnemers. Rick is onze vaste trainer hiervoor, omdat hij opgeleid is in het werken met jeugd en al zeer veel ervaring heeft met het aanbieden van sportlessen aan deze doelgroep. Gecombineerd met zijn enthousiasme verwachten we een veilige en leerzame les, maar vooral ook een leuke en gevarieerde training aan te bieden. Nu hebben we donderdags 16.30-17.15 uur in het rooster staan, maar gezien de vele interesse zou het kunnen dat er nog een les bij komt. Heeft je zoon of dochter interesse? Meld ze dan aan voor een gratis proefles!"
         },
         {
-          "title": "Kom ook in ‘Corona’-tijd lekker trainen!",
+          "title": "Kom ook in 'Corona'-tijd lekker trainen!",
           "description": "Tips van onze fysiotherapeut voor optimaal herstel na training.",
           "date": "16 juni 2020",
           "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=1000&fit=crop",
+          "imageAlt": "Buiten trainen bij Sportloods Oost Nijmegen in coronatijd",
           "content": "Sinds een paar weken mogen we weer buiten training geven! We hebben nu weer op alle dagen tijden waarop je je inschrijft en je weer een leuke, afwisselende training van ons krijgt zoals je van ons gewend was. Alleen nu buiten :-). Hopelijk mogen we over een paar weken ook weer binnen aan de slag. We zullen dan nog steeds veel buiten sporten als het weer het toelaat. Maar kunnen dan bij regen uitwijken naar binnen. En ook weer de mogelijkheden van de ruimte binnen gebruiken. Zoals de plankiers, ringen, het rek, etcetera. Ook in deze tijd zijn proeflessers welkom! Je kunt je via deze website voor een training aanmelden. Hoe makkelijk is dat!"
         },
         {
@@ -558,6 +564,7 @@
           "description": "Tips van onze fysiotherapeut voor optimaal herstel na training.",
           "date": "5 maart 2020",
           "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=1000&fit=crop",
+          "imageAlt": "Olympisch gewichtheffen wedstrijd atleten Sportloods Oost Nijmegen",
           "content": "Zaterdag 18 januari jl hadden we ons jaarlijkse gewichthefwedstrijd. Mooi om te zien hoe door deelname aan deze wedstrijd bij iedereen de focus en motivatie tijdens de training in de maanden voorafgaand toenamen. Deelnemers die pas net met gewichtheffen begonnen zijn en al ervaren atleten, je zag de concentratie en toch ook wel wat spanning op de gezichten op deze dag. Want om nu ineens 3 kansen per lift te krijgen, daarin je beste prestatie neer te willen zetten en ook nog eens terwijl er naar je gekeken wordt, is best spannend! Wat gaaf om te zien dat iedereen zo een goede prestatie neergezet heeft! Dat maakt ons alleen maar super trots op al onze atleten! Wij zijn benieuwd naar jullie prestaties volgend jaar!"
         }
       ]
@@ -748,6 +755,461 @@
       "hours": "Openingstijden",
       "price": "Prijs",
       "popular": "Populair"
+    }
+  },
+  "legal": {
+    "privacy": {
+      "meta": {
+        "title": "Privacyverklaring | Sportloods Oost",
+        "description": "Lees hier hoe Sportloods Oost omgaat met je persoonsgegevens."
+      },
+      "title": "Privacyverklaring Sportloods oost",
+      "lastUpdated": "15 januari 2020",
+      "intro": "Met ingang van 25 mei 2018 is in de gehele Europese Unie de Algemene Verordening Gegevensbescherming (AVG) van kracht. De huidige Wet bescherming persoonsgegevens is vanaf dat moment niet meer geldig. Aan de verwerking van persoonsgegevens worden door de AVG strenge eisen gesteld. Sportloods oost heeft kennisgenomen van deze verordening en heeft, daar waar noodzakelijk, wijzigingen aangebracht in de interne beheersingsmaatregelen. In deze privacyverklaring vind u meer informatie over onze grondslagen voor het verzamelen van persoonsgegevens en de organisatorische waarborgen die wij hebben getroffen naar aanleiding van de AVG. Tevens informeren wij u over welke gegevens wij van onze leden verzamelen en met welk doel.",
+      "sections": [
+        {
+          "id": 1,
+          "title": "Grondslagen voor het verzamelen van persoonsgegevens (art. 6 AVG)",
+          "content": "Tot de persoonsgegevens behoren alle gegevens die terug te leiden zijn tot een natuurlijk persoon. Gegevens die niet noodzakelijk zijn voor de uitvoering van onze bedrijfsactiviteiten zullen worden verwijderd. Sportloods oost verzamelt op basis van onderstaande grondslagen persoonsgegevens van haar leden.",
+          "subsections": [
+            {
+              "title": "Na toestemming van de gebruiker",
+              "content": "Met ingang van 01 februari 2020 zal Sportloods oost nieuwe leden bij inschrijving altijd toestemming vragen voor het verzamelen van hun persoonsgegevens. Tevens zal worden gevraagd of leden ermee instemmen dat wij hen nieuwsbrieven of andere berichten versturen via ons ledenadministratiesysteem en of wij foto's of ander beeldmateriaal mogen gebruiken voor social media uitingen of andere reclamevormen."
+            },
+            {
+              "title": "Noodzakelijk voor het uitvoeren van de overeenkomst",
+              "content": "Voor het nakomen van onze afspraken (levering van onze diensten) dienen wij bepaalde persoonsgegevens (bijvoorbeeld naam, adres, emailadres en bankrekeningnummer) te verzamelen."
+            },
+            {
+              "title": "Op basis van een gerechtvaardigd belang",
+              "content": "Om onze bedrijfsactiviteiten goed uit te kunnen voeren (bijv. de inschrijvingen voor lessen) zijn we genoodzaakt om in sommige gevallen persoonsgegevens te verzamelen. Dit is een gerechtvaardigd belang voor het verzamelen van persoonsgegevens."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Verwerking persoonsgegevens",
+          "content": "Voor de verwerking van de ledenadministratie maakt Sportloods oost gebruik van de onlinedienst SportBit Manager (verwerker). In deze privacyverklaring leggen wij (Sportloods oost) uit wat wij bij SportBit Manager allemaal doen met de informatie die we over onze leden verzamelen middels dit systeem. Sportloods oost blijft te allen tijde verwerkingsverantwoordelijke van alle gegevens welke in SportBit Manager zijn opgenomen.\n\nOm gebruik te kunnen maken van SportBit Manager, dienen leden zich eerst te registreren. Hierbij geven zij toestemming voor de verwerking van de persoonsgegevens die wij in deze privacyverklaring noemen. Via de app krijgen leden toegang tot de beheeromgeving waarin zij zelf allerlei zaken rondom hun lidmaatschap bij Sportloods oost kunnen regelen, zoals inschrijvingen, aankopen, instellingen, abonnementswijzigingen en opzeggingen. Tevens kunnen hier de privacy instellingen worden aangepast door leden zelf.",
+          "dataCollected": {
+            "registration": "Bij registratie bij SportBit Manager wordt om de volgende gegevens gevraagd: gebruikersnaam, wachtwoord, naam, emailadres, profielfoto (optioneel), geboortedatum, geslacht, adresgegevens, telefoonnummer, IBAN-nummer, factuuradres.",
+            "medical": "Medische informatie welke zelf door lid wordt aangedragen of door trainers wordt toegevoegd aan het account.",
+            "membership": "Gedurende het lidmaatschap kunnen, indien van toepassing, tevens de volgende gegevens worden verzameld van leden: In- en uitschrijvingen voor lessen, Aankopen die zijn gedaan, Aanmeldingen, wijzigingen en opzeggingen van abonnementsvormen, Loggen van prestaties, Trainingsbuddies, Aanvullingen/wijzigingen in medische informatie"
+          },
+          "purposes": [
+            "Aanmaken en in stand houden van je account.",
+            "Verwerken en afhandelen van bestellingen en betalingen (bijv. abonnementsgelden of aankopen die je hebt gedaan bij Sportloods oost)",
+            "Verzenden van nieuwsbrieven of andere e-mails en/of pushberichten namens Sportloods oost.",
+            "Informeren over wijzigingen van onze producten/diensten."
+          ],
+          "retention": "Iedere onderneming is wettelijk verplicht zijn administratie 7 jaar te bewaren (fiscale bewaarplicht) waar het gaat om financiële transacties. Sportloods oost zal daarom de persoonsgegevens ook 7 jaar bewaren omdat aan ieder lidmaatschap financiële transacties gekoppeld zijn.",
+          "thirdParties": "Daar wij samenwerken met derden (SportBit Manager) hebben wij middels een verwerkersovereenkomst de naleving van de AVG gewaarborgd. Deze verwerkersovereenkomst is door betrokken partijen ondertekend. Sportloods oost deelt enkel de hoogstnoodzakelijk informatie met deze externe partij.\n\nBehalve aan SportBit Manager zullen wij gegevens van onze leden niet aan derden verstrekken, tenzij dit noodzakelijk is het kader van de leveringen van onze diensten of indien dit wettelijk verplicht is, bijvoorbeeld daartoe bevoegde partijen."
+        },
+        {
+          "id": 3,
+          "title": "Organisatorische waarborgen",
+          "content": "In deze paragraaf hebben we de organisatorische maatregelen opgenomen welke Sportloods oost heeft getroffen in het kader van de AVG.",
+          "subsections": [
+            {
+              "title": "Beveiliging van persoonsgegevens",
+              "content": "De privacy van onze leden is belangrijk voor ons. Sportloods oost beheert haar gegevens via SportBit Manager. Om de continuïteit en de beveiliging te waarborgen, maken zij gebruik van zogeheten periodiek back-ups en beschikken zij over degelijke herstelplannen. Tevens maken zij periodieke analyses van de toegang die verleend is tot het systeem om eventuele risico's tijdig te identificeren.",
+              "measures": [
+                "Toegang tot persoonsgegevens wordt afgeschermd met een gebruikersnaam en wachtwoord.",
+                "Wachtwoorden worden door middel van onomkeerbare hashing opgeslagen",
+                "Secured communicatie met server (HTTPS/SSL). De fysieke toegang tot de servers waar de gegevens zijn opgeslagen, is beperkt tot geautoriseerde personen."
+              ]
+            },
+            {
+              "title": "Procedure omtrent het melden van datalekken (art. 33 AVG)",
+              "content": "Indien er sprake is geweest van een beveiligingsincident, waarbij persoonsgegevens zijn verloren en/of onrechtmatig verkregen, dan zal Sportloods oost dit lek uiterlijk binnen 72 uur melden aan de Autoriteit Persoonsgegevens (AP) en de direct betrokkene(n).",
+              "requirements": [
+                "De aard van de inbreuk in verband met persoonsgegevens, waar mogelijk onder vermelding van de categorieën van betrokkenen en persoonsgegevens in kwestie, en bij benadering, het aantal betrokkenen en persoonsgegevensregisters in kwestie.",
+                "De naam en contactgegevens van de functionaris voor gegevensbescherming of een ander contactpunt waar informatie kan worden verkregen.",
+                "De waarschijnlijke gevolgen van de inbreuk in verband met persoonsgegevens.",
+                "De voorgestelde of genomen maatregelen om de inbreuk in verband met persoonsgegevens aan te pakken, waaronder, in voorkomend geval, de maatregelen ter beperking van eventuele nadelige gevolgen."
+              ]
+            },
+            {
+              "title": "Cookies",
+              "content": "SportBit Manager maakt gebruik van cookies. Cookies zijn kleine bestandjes waar informatie in kan worden opgeslagen zodat deze niet steeds opnieuw ingevuld hoeven te vullen. Tegelijkertijd kan zo worden bijhouden hoe het ledenportaal wordt bezocht en gebruikt. Via de browser kan het plaatsen van cookies worden uitgeschakeld door gebruikers, maar sommige aspecten van het ledenportaal werken dan niet meer optimaal."
+            },
+            {
+              "title": "Google Analytics",
+              "content": "SportBit Manager maakt gebruik van Google Analytics om bij te houden hoe leden het ledenportaal gebruiken. Hiervoor is een verwerkingsovereenkomst gesloten met Google. In deze overeenkomst staan strikte afspraken over welke gegevens Google mag bijhouden. Zo heeft Google geen toestemming verkregen om de Analytics-informatie te gebruiken voor andere Googlediensten. Google IP-adressen worden geanonimiseerd."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Rechten van betrokkenen",
+          "content": "Leden van Sportloods oost hebben recht op inzage, rectificatie en vergetelheid als het gaat om hun persoonsgegevens. Hieronder wordt dit nader toegelicht.",
+          "subsections": [
+            {
+              "title": "Recht op inzage (art.15 AVG)",
+              "content": "Alle leden van Sportloods oost hebben recht op inzage van hun eigen gegevens die door SportBit Manager zijn opgeslagen. Het overgrote deel van deze gegevens kunnen leden zelf in SportBit Manager inzien. Mocht je meer informatie hierover willen, dan kun je een schriftelijk verzoek mailen naar info@sportloodsoost.nl. Vervolgens zal Sportloods oost z.sm. contact opnemen om een afspraak met je te maken."
+            },
+            {
+              "title": "Recht op rectificatie (art. 16 AVG)",
+              "content": "Leden hebben te allen tijde recht op correctie (rectificatie) van onjuiste persoonsgegeven. Dit recht is door SportBit Manager gewaarborgd doordat leden zelf via hun eigen account hun persoonsgegevens op elk moment kunt aanpassen/rectificeren."
+            },
+            {
+              "title": "Toestemming",
+              "content": "Wij gebruiken gegevens van onze leden alleen met hun toestemming. Deze toestemming mogen leden altijd weer intrekken. Dit kan via de privacy instellingen in SportBit Manager. De intrekking van de toestemming heeft geen terugwerkende kracht. Het intrekken van de toestemming heeft dus geen gevolgen voor al uitgevoerde handelingen."
+            },
+            {
+              "title": "Klachten",
+              "content": "Wanneer leden van mening zijn dat Sportloods oost niet op de juiste manier omgaat met hun gegevens, dan hebben zij het recht om een klacht in te dienen bij de toezichter: de Autoriteit Persoonsgegevens."
+            }
+          ]
+        }
+      ],
+      "contact": {
+        "title": "Heeft u vragen?",
+        "content": "Indien u naar aanleiding van deze privacyverklaring nog vragen hebt over de AVG of meer informatie wenst over de wijze waarop Sportloods oost hiermee omgaat, dan kunt u contact opnemen met onze functionaris Gegevensbescherming via het volgende telefoonnummer: 06-24897980 of stuur een e-mail naar info@sportloodsoost.nl."
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Algemene Voorwaarden | Sportloods Oost",
+        "description": "Lees hier de algemene voorwaarden van Sportloods Oost."
+      },
+      "title": "Algemene voorwaarden Sportloods Oost",
+      "lastUpdated": "November 2024",
+      "sections": [
+        {
+          "id": 1,
+          "title": "Definities",
+          "items": [
+            {
+              "number": "1.1",
+              "content": "Sportloods Oost (KvK 72345403) is gevestigd aan de Postweg 50 te Nijmegen. Sportloods Oost is een vennootschap onder firma die tot doel heeft het exploiteren van een sportschool. Daarbij inbegrepen het uitoefenen of doen uitoefenen van kracht- en circuittrainingen, olympisch gewichtheffen, personal training, het adviseren op het gebied van voeding en voedingssupplementen, coaching bij sportevenementen en teambuilding voor zowel particulieren als bedrijven."
+            },
+            {
+              "number": "1.2",
+              "content": "In deze algemene voorwaarden wordt verstaan onder:\nOpdrachtnemer: Sportloods Oost\nHet Lid: de natuurlijke persoon (m/v), waaronder ook een Jeugdlid, of – in geval van Bedrijfsfitness – de rechtspersoon of partij op wiens naam het lidmaatschap is geadministreerd. Consument: een natuurlijk persoon die niet handelt in de uitoefening van beroep of bedrijf."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Toepasselijkheid",
+          "items": [
+            {
+              "number": "2.1",
+              "content": "Deze Algemene Voorwaarden zijn van toepassing op iedere opdracht aan Sportloods Oost, daaronder begrepen iedere vervolgopdracht of gewijzigde of aanvullende opdracht, tenzij voorafgaand aan de totstandkoming van een overeenkomst schriftelijk anders is overeengekomen."
+            },
+            {
+              "number": "2.2",
+              "content": "Deze Algemene Voorwaarden tezamen met de overeenkomst beheersen de rechtsverhouding tussen Sportloods Oost en de opdrachtgever."
+            },
+            {
+              "number": "2.3",
+              "content": "De onderhavige voorwaarden zijn eveneens van toepassing op overeenkomsten met Sportloods Oost, voor de uitvoering waarvan door Sportloods Oost derden dienen te worden betrokken."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Overeenkomst",
+          "items": [
+            {
+              "number": "3.1",
+              "content": "Een Overeenkomst komt eerst tot stand, nadat de opdracht door Sportloods Oost schriftelijk is aanvaard. Ten aanzien van de totstandkoming van een overeenkomst kan Sportloods Oost slechts rechtsgeldig worden vertegenwoordigd door een van haar wettelijk vertegenwoordigers; De heer J.G.A.F. Meeuwsen of mevrouw L. Hermans"
+            },
+            {
+              "number": "3.2",
+              "content": "Alle opdrachten worden geacht uitsluitend te zijn gegeven aan en aanvaard door Sportloods Oost, ook indien het de uitdrukkelijke of stilzwijgende bedoeling is dat een opdracht door een bepaald persoon zal worden uitgevoerd."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Offertes en aanbiedingen",
+          "items": [
+            {
+              "number": "4.1",
+              "content": "Alle offertes en aanbiedingen van Sportloods Oost zijn vrijblijvend, tenzij in de offerte een termijn voor aanvaarding is gesteld. Indien geen aanvaardingstermijn is gesteld, kan aan de offerte of aanbieding op generlei wijze enig recht worden ontleend indien het product waarop de offerte of de aanbieding betrekking heeft in de tussentijd niet meer beschikbaar is."
+            },
+            {
+              "number": "4.2",
+              "content": "Sportloods Oost kan niet aan zijn offertes of aanbiedingen worden gehouden indien het Lid redelijkerwijs kan begrijpen dat de offertes of aanbiedingen, dan wel een onderdeel daarvan, een kennelijke vergissing of verschrijving bevat."
+            },
+            {
+              "number": "4.3",
+              "content": "Indien de aanvaarding (al dan niet op ondergeschikte punten) afwijkt van het in de offerte of de aanbieding opgenomen aanbod dan is Sportloods Oost daaraan niet gebonden. De Overeenkomst komt dan niet overeenkomstig deze afwijkende aanvaarding tot stand, tenzij Sportloods Oost anders aangeeft."
+            },
+            {
+              "number": "4.4",
+              "content": "Een samengestelde prijsopgave verplicht Sportloods Oost niet tot het verrichten van een gedeelte van de opdracht tegen een overeenkomstig deel van de opgegeven prijs. Aanbiedingen of offertes gelden niet automatisch voor toekomstige orders."
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Lidmaatschap; lid worden en toegang",
+          "items": [
+            {
+              "number": "5.1",
+              "content": "Sportloods Oost behoudt zich het recht voor om een inschrijving te weigeren zonder opgaaf van redenen."
+            },
+            {
+              "number": "5.2",
+              "content": "Elk lidmaatschap van Sportloods Oost is strikt persoonlijk en niet overdraagbaar aan derden."
+            },
+            {
+              "number": "5.3",
+              "content": "Het lid dient bij aanvang van de overeenkomst minimaal 18 jaar oud te zijn, in geval van minderjarigen dienen de ouders/wettelijk vertegenwoordigers de overeenkomst goed te keuren en te ondertekenen."
+            },
+            {
+              "number": "5.4",
+              "content": "Bij inschrijving heeft het Lid (indien sprake is van een consument) het recht om binnen 14 dagen na de dag van inschrijving zonder opgave van redenen (en indien het lidmaatschap niet is gebruikt) af te zien van de Overeenkomst door dit schriftelijk mede te delen. Indien het Lid binnen de bedenktijd van 14 dagen besluit af te zien van de Overeenkomst, en het lidmaatschap niet gebruikt in die periode, dan is deze herroeping kosteloos."
+            },
+            {
+              "number": "5.5",
+              "content": "Een Overeenkomst bij Sportloods Oost wordt aangegaan voor de duur en vorm zoals aangegeven bij inschrijving. De overeenkomst wordt aangegaan voor een periode van zes maanden. In deze periode is het wel mogelijk om de abonnementsvorm te verhogen, maar niet te verlagen."
+            },
+            {
+              "number": "5.6",
+              "content": "Het Lid is lidmaatschapsgeld verschuldigd vanaf het moment van inschrijving. De SEPA automatische incasso gaat vanaf dat moment van start. Het niet voldoen aan enige betalingsverplichting door een Lid kan er enkel toe leiden dat de Overeenkomst eindigt indien deze wordt ontbonden door Sportloods Oost."
+            },
+            {
+              "number": "5.7",
+              "content": "Als het maximum aantal leden is bereikt, hetgeen ter eenzijdige beoordeling is van Sportloods Oost, kan een natuurlijk persoon indien gewenst op een wachtlijst worden geplaatst."
+            },
+            {
+              "number": "5.8",
+              "content": "Bij wijziging van de abonnementsvorm zal de nieuwe abonnementsvorm per ingang van de nieuwe kalendermaand ingaan waarbij aanstonds het nieuwe tarief zal worden berekend. Vanaf deze wijziging gaat een nieuwe contractperiode in van zes maanden en gelden dezelfde regels."
+            },
+            {
+              "number": "5.9",
+              "content": "De abonnementsvormen van Sportloods Oost zijn gebaseerd op maandelijkse cyclus. Indien er afwezigheid is door welke omstandigheid dan ook is het niet mogelijk om de lessen mee te nemen naar de daarop volgende maanden en er bestaat geen recht op restitutie of compensatie in welke vorm dan ook."
+            },
+            {
+              "number": "5.10",
+              "content": "Het is mogelijk om kosteloos eenmalig een proefles aan te vragen."
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Lessen en verplichtingen",
+          "items": [
+            {
+              "number": "6.1",
+              "content": "Het Lid is verplicht elke (tussentijdse) medische contra-indicatie voor lichamelijke inspanning (waaronder begrepen blessures, operaties, of andere vormen van pijn, onbehagen of abnormale vermoeidheid voor, tijdens, of na de training, evenals veranderingen in zijn lichamelijke conditie en/of zwangerschap) direct te melden bij Sportloods Oost gedurende de duur van de Overeenkomst."
+            },
+            {
+              "number": "6.3",
+              "content": "Indien er sprake is van een blessure dan wel operatie waardoor de training geen doorgang kan vinden, is het mogelijk de Overeenkomst tijdelijk op te schorten, mits dit tijdig wordt aangegeven bij Sportloods Oost. Let wel, er moet sprake zijn van een ernstige blessure zoals o.a. breuken, spierscheuringen, e.d. zodat u niets aan enige fysieke activiteit kunt doen. Bij o.a. vermoeidheid, verkoudheid e.d. is het niet mogelijk de Overeenkomst op te schorten."
+            },
+            {
+              "number": "6.4",
+              "content": "Afspraken voor personal training dienen uiterlijk 24 uur van tevoren geannuleerd te worden. Wanneer een afspraak korter dan 24 uur van tevoren wordt geannuleerd, zal deze afspraak volledig in rekening worden gebracht en komen te vervallen."
+            },
+            {
+              "number": "6.5",
+              "content": "Het Lid begrijpt dat door fysieke activiteit blessures of andere complicaties kunnen ontstaan, zonder dat dit nalatigheid van Sportloods Oost met zich meebrengt, en dat Sportloods Oost niet kan instaan voor het bereiken van enig beoogd resultaat met betrekking tot de trainingen."
+            },
+            {
+              "number": "6.6",
+              "content": "Met het oog op de gezondheid en hygiëne dient het Lid in de zalen schone sportschoenen te dragen, schone kleding te dragen, een handdoek mee te nemen, en een gevulde fles water bij zich te hebben."
+            },
+            {
+              "number": "6.7",
+              "content": "Sportloods Oost behoudt zich het recht voor om reserveringen te weigeren en/of de Overeenkomst met onmiddellijke ingang te ontbinden, wanneer het Lid herhaaldelijk niet volgens afspraak verschijnt of na herhaaldelijk annuleren de contracttermijn overschrijdt, zonder gehouden te zijn tot enig vorm van schadevergoeding en zonder dat er een ingebrekestelling is vereist. (Gedeeltelijke) restitutie van het betaalde bedrag vindt in dit geval nimmer plaats."
+            },
+            {
+              "number": "6.8",
+              "content": "Personal Training-sessies beginnen en eindigen op het geplande tijdstip. Indien de sessie buiten de schuld van Sportloods Oost om later start dan gepland, is dat geen reden om de duur van de sessie uit te breiden buiten de geplande tijd."
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Openingstijden",
+          "items": [
+            {
+              "number": "7.1",
+              "content": "Sportloods Oost is gerechtigd de openingstijden tijdelijk of blijvend te wijzigen."
+            },
+            {
+              "number": "7.2",
+              "content": "Sportloods Oost behoudt zich het recht voor om in vakantieperiodes en op officiële en erkende feestdagen, zonder recht op restitutie of compensatie, volgens een aangepast rooster te werken dan wel de vestiging te sluiten. Het aangepaste rooster zal tijdig bekend worden gemaakt."
+            },
+            {
+              "number": "7.3",
+              "content": "Sportloods Oost behoudt zich het recht voor om lessen uit te stellen c.q. af te gelasten in verband met een naar het oordeel van Sportloods Oost te gering aantal deelnemers, vakantie, ziekte van de instructeur of enige vorm van overmacht, zonder recht op restitutie."
+            },
+            {
+              "number": "7.4",
+              "content": "Sportloods Oost is gerechtigd de vestiging voor reparatie en onderhoudswerk te sluiten. Het Lid heeft geen recht op restitutie van lidmaatschapsgelden."
+            },
+            {
+              "number": "7.5",
+              "content": "Bij afwezigheid van een trainer van Sportloods Oost zal Sportloods Oost geheel onverplicht zo spoedig mogelijk proberen zorg te dragen voor een normale voortgang van de lessen."
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Beëindiging lidmaatschap",
+          "items": [
+            {
+              "number": "8.1",
+              "content": "Beëindiging van een Overeenkomst dient schriftelijk te geschieden door opzegging per e-mail of brief onder vermelding van persoonlijke gegevens en handtekening, met inachtneming van een maand opzegtermijn."
+            },
+            {
+              "number": "8.2",
+              "content": "Sportloods Oost behoudt zich het recht voor om bij ernstige overtreding of schending van de huisregels of anders gebleken onaanvaardbaar gedrag of in geval van wanprestatie, ter exclusieve beoordeling van Sportloods Oost, het Lid de toegang tot de vestiging te ontzeggen en de Overeenkomst (per direct) te beëindigen."
+            },
+            {
+              "number": "8.3",
+              "content": "Opschorting van de Overeenkomst door het Lid om welke reden dan ook is niet toegestaan."
+            },
+            {
+              "number": "8.4",
+              "content": "Als er geen opzegging heeft plaatsgevonden, wordt het abonnement omgezet in een maandelijks abonnement."
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "title": "Huisregels en klachten",
+          "items": [
+            {
+              "number": "9.1",
+              "content": "Het Lid dient zich uiterlijk op de ingangsdatum van de Overeenkomst op de hoogte te stellen van de huisregels van Sportloods Oost en gedurende deze periode naar deze huisregels te handelen. De huisregels van Sportloods Oost staan op de website (www.sportloodsoost.nl)."
+            },
+            {
+              "number": "9.2",
+              "content": "Het is niet toegestaan om alcohol, drugs of prestatie bevorderende middelen, van welke aard dan ook, te gebruiken en/of te verhandelen in en om rondom Sportloods Oost."
+            },
+            {
+              "number": "9.3",
+              "content": "Sportloods Oost behoudt zich het recht voor om bij ernstige of herhaaldelijke overtreding van de huisregels de Overeenkomst met onmiddellijke ingang te beëindigen zonder dat dit recht geeft op restitutie van het reeds betaalde of het nog verschuldigde bedrag door het Lid."
+            },
+            {
+              "number": "9.4",
+              "content": "In geval van klachten dient het Lid zich te wenden tot een van de leidinggevenden van Sportloods Oost. Zij zullen de klacht zo spoedig mogelijk in behandeling nemen."
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Betaling en incasso",
+          "items": [
+            {
+              "number": "10.1",
+              "content": "Een Overeenkomst bij Sportloods Oost wordt aangegaan voor de vorm en duur zoals aangegeven bij de inschrijving, bestaande uit een Overeenkomst met een contractduur van minimaal zes maanden, vanaf de ingangsdatum welke in maandelijkse termijnen kan worden voldaan. Indien het lidmaatschap eerder wordt geactiveerd dan de ingangsdatum, zodat het Lid een aantal dagen eerder gebruik kan maken van de faciliteiten, is het Lid over deze extra dagen een aanvullend lidmaatschapsgeld verschuldigd, te berekenen naar rato van het aantal extra dagen."
+            },
+            {
+              "number": "10.2",
+              "content": "Met uitzondering van met een werkgever overeengekomen tarieven, zijn alle tarieven te vinden op de website of bij de Sportloods Oost op te vragen."
+            },
+            {
+              "number": "10.3",
+              "content": "Alle bedragen zijn bij vooruitbetaling verschuldigd en opeisbaar."
+            },
+            {
+              "number": "10.4",
+              "content": "Bij niet tijdige ontvangst door Sportloods Oost van verschuldigde bedragen, om welke reden dan ook, bijvoorbeeld als gevolg van onvoldoende saldo op de bank of stornering om welke reden dan ook of om ongeacht welke andere reden van te late betaling, wordt de incasso nogmaals aangeboden. Sportloods Oost is gerechtigd om voor iedere extra incassopoging administratiekosten in rekening te brengen omdat het Lid dan in verzuim is. Bovendien is Sportloods Oost gerechtigd de totale vordering uit handen te geven ter incasso. In dat geval is het Lid gehouden om de volledige opeisbare vordering, waaronder alle bedragen zoals hierboven bedoeld, alsmede toekomstige termijnen die verschuldigd (zouden) zijn voor de duur van de overeenkomst, inclusief alle buitengerechtelijke incassokosten ineens te voldoen."
+            },
+            {
+              "number": "10.5",
+              "content": "Sportloods Oost kan het Lid de toegang tot de vestiging ontzeggen indien en voor zolang niet aan de betalingsverplichting is voldaan. Indien het Lid in verzuim is door een betalingsachterstand, kan Sportloods Oost de Overeenkomst met directe ingang beëindigen, onverminderd het recht om de vordering die op dat moment open staat, evenals toekomstige termijnen die verschuldigd (zouden) zijn voor de duur van de Overeenkomst, ineens en direct bij het Lid te (laten) incasseren."
+            },
+            {
+              "number": "10.6",
+              "content": "Het lidmaatschapsgeld vooraf overeengekomen. Sportloods Oost heeft het recht om het lidmaatschapsgeld te wijzigen. Een prijswijziging wordt door Sportloods Oost één maand voorafgaand aan haar leden medegedeeld. Het lid heeft het recht om de overeenkomst binnen vier weken na bekendmaking te ontbinden."
+            },
+            {
+              "number": "10.7",
+              "content": "Tariefsaanpassingen vanwege overheidsmaatregelen (bijv. BTW percentage verhoging of verlaging) worden onmiddellijk doorgevoerd en geven geen recht op ontbinding."
+            },
+            {
+              "number": "10.8",
+              "content": "Indien het Lid om welke reden dan ook geen gebruik maakt van de Overeenkomst vindt nimmer teruggave van het lidmaatschapsgeld plaats."
+            },
+            {
+              "number": "10.9",
+              "content": "Met ondertekening van het inschrijfformulier geeft het lid toestemming voor automatische incasso van het lidmaatschapsgeld."
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Onrechtmatige uitoefening Personal training activiteiten",
+          "items": [
+            {
+              "number": "11.1",
+              "content": "Het is het Lid verboden om personal training activiteiten te verrichten/ dan wel een eigen personal trainer mee te nemen in de vestiging van Sportloods Oost zonder toestemming van Sportloods Oost."
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Persoonsgegevens",
+          "items": [
+            {
+              "number": "12.1",
+              "content": "Sportloods Oost verwerkt de persoonsgegevens van het Lid binnen de kaders van de toepasselijke wet- en regelgeving inzake de bescherming van de persoonlijke levenssfeer, in het bijzonder de Wet bescherming persoonsgegevens, op een wijze en voor de doeleinden zoals hieronder nader omschreven."
+            },
+            {
+              "number": "12.2",
+              "content": "Het Lid, zijnde een natuurlijk persoon, heeft een inzage-, correctie- en verzetrecht met betrekking tot de van hem verwerkte persoonsgegevens. Het betreffende Lid kan een bezwaar tegen verwerking van zijn persoonsgegevens en verzoeken tot inzage, correctie en verzet richten aan Sportloods Oost."
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Risico en aansprakelijkheid",
+          "items": [
+            {
+              "number": "13.1",
+              "content": "Het Lid beseft en aanvaard dat het beoefenen van sport risico's met zich mee kan brengen. Het gebruik van de apparatuur en materialen, het volgen van een programma of van cursusonderdelen en/of –activiteiten van welke aard dan ook, bij Sportloods Oost, is geheel voor eigen risico van het Lid."
+            },
+            {
+              "number": "13.2",
+              "content": "Sportloods Oost en haar werknemers en/of andere hulppersonen aanvaarden geen enkele aansprakelijkheid voor materiële of immateriële schade als gevolg van enig ongeval of letsel van het Lid en/of derden ontstaan op welke wijze dan ook."
+            },
+            {
+              "number": "13.3",
+              "content": "Sportloods Oost en eventuele werknemers en/of andere hulppersonen aanvaarden geen enkele aansprakelijkheid voor schade, verlies of diefstal van eigendommen van het Lid."
+            },
+            {
+              "number": "13.4",
+              "content": "Sportloods Oost is slechts aansprakelijk voor schade die het lid lijdt en die het rechtstreeks en uitsluitend gevolg is van een aan Sportloods Oost toe te rekenen tekortkoming. De aansprakelijkheid van Sportloods Oost is beperkt tot het bedrag waarvoor Sportloods Oost aanspraak kan maken op een uitkering van haar verzekeraar."
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "title": "Toepasselijk recht",
+          "items": [
+            {
+              "number": "14.1",
+              "content": "Op deze Algemene Voorwaarden en alle overeenkomsten door of met Sportloods Oost aangegaan, is uitsluitend het Nederlands recht van toepassing."
+            },
+            {
+              "number": "14.2",
+              "content": "Alle geschillen welke mochten ontstaan naar aanleiding van de Overeenkomst tussen het Lid en Sportloods Oost zullen worden beslecht door een volgens de wet bevoegde rechter in het arrondissement waar Sportloods Oost vestiging is gevestigd."
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "title": "Slotbepalingen",
+          "items": [
+            {
+              "number": "15.1",
+              "content": "Sportloods Oost is gerechtigd deze algemene voorwaarden te wijzigen, met dien verstande dat de wijziging ten minste drie maanden voor de inwerkingtreding schriftelijk wordt aangekondigd."
+            },
+            {
+              "number": "15.2",
+              "content": "Deze algemene voorwaarden zijn te vinden op de website en kunnen op verzoek worden toegezonden."
+            }
+          ]
+        }
+      ]
     }
   }
 }

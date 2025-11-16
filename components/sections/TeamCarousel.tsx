@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Image from 'next/image';
 
 interface TeamMember {
   name: string;
   role: string;
   bio: string | string[];
   image: string;
+  imageAlt?: string;
   certifications: string[];
 }
 
@@ -58,10 +60,12 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
               className="w-full h-full group cursor-pointer"
             >
               <div className="w-full h-full bg-gray-900 overflow-hidden hover:ring-4 hover:ring-primary-300 transition-all">
-                <img
+                <Image
                   src={selectedMember.image}
-                  alt={selectedMember.name}
-                  className="w-full h-full object-cover object-center transition-transform group-hover:scale-105 grayscale"
+                  alt={selectedMember.imageAlt || selectedMember.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover object-center transition-transform group-hover:scale-105 grayscale"
                 />
               </div>
             </button>
@@ -133,10 +137,12 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
             >
               {/* Portrait with grayscale */}
               <div className="absolute inset-0">
-                <img
+                <Image
                   src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-center grayscale group-hover:scale-105 transition-transform duration-500"
+                  alt={member.imageAlt || member.name}
+                  fill
+                  sizes="(max-width: 768px) 280px, 400px"
+                  className="object-cover object-center grayscale group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Light overlay effect like example */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-black/40 mix-blend-overlay" />

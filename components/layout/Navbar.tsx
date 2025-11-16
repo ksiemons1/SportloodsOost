@@ -18,6 +18,16 @@ export const Navbar: React.FC = () => {
   // Handle smooth scroll to anchor
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
+      // Check if we're on the home page
+      const isHomePage = window.location.pathname === '/';
+      
+      if (!isHomePage) {
+        // On other pages, navigate to home with anchor
+        window.location.href = '/' + href;
+        return;
+      }
+      
+      // On home page, do smooth scroll
       e.preventDefault();
       
       // Close mobile menu first
@@ -43,7 +53,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white shadow-md sticky top-0 z-50" aria-label="Hoofdnavigatie">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center h-20">
           {/* Logo */}
@@ -51,6 +61,7 @@ export const Navbar: React.FC = () => {
             href="#home" 
             onClick={(e) => handleAnchorClick(e, '#home')}
             className="flex items-center space-x-2 cursor-pointer"
+            aria-label="Terug naar home"
           >
             <div className="text-2xl font-bold text-primary-700">
               {site.name}
@@ -88,7 +99,8 @@ export const Navbar: React.FC = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 text-gray-600 hover:text-primary-600 focus:outline-none ml-auto"
-            aria-label={content.common.buttons.menu}
+            aria-label={mobileMenuOpen ? "Menu sluiten" : "Menu openen"}
+            aria-expanded={mobileMenuOpen}
           >
             <svg
               className="w-6 h-6"

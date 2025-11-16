@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-900 text-gray-300" aria-label="Site footer">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-12 max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-white mb-3">{site.name}</h3>
             <p className="text-gray-400 text-sm mb-6">{footer.tagline}</p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4" aria-label="Social media links">
               {/* Social Media Icons */}
               <a
                 href={site.social.facebook}

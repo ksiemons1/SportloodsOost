@@ -101,6 +101,56 @@ export default function Home() {
   const [isStatsVisible, setIsStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
+  // Contact form state
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [formMessage, setFormMessage] = useState('');
+
+  // Handle form submission
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('sending');
+    setFormMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setFormStatus('success');
+        setFormMessage('Bedankt! Je bericht is verzonden. We nemen zo spoedig mogelijk contact met je op.');
+        (e.target as HTMLFormElement).reset();
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setFormStatus('idle');
+          setFormMessage('');
+        }, 5000);
+      } else {
+        setFormStatus('error');
+        setFormMessage(result.error || 'Er is iets misgegaan. Probeer het later opnieuw.');
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setFormMessage('Er is een fout opgetreden. Probeer het later opnieuw of bel ons direct.');
+    }
+  };
+
   useEffect(() => {
     const currentRef = statsRef.current;
     
@@ -445,7 +495,17 @@ export default function Home() {
           </Heading>
 
           <Card className="max-w-2xl mx-auto">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleContactSubmit}>
+              {formMessage && (
+                <div className={`p-4 rounded-lg ${
+                  formStatus === 'success' 
+                    ? 'bg-green-50 text-green-800 border border-green-200' 
+                    : 'bg-red-50 text-red-800 border border-red-200'
+                }`}>
+                  {formMessage}
+                </div>
+              )}
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   {form.fields.name.label}
@@ -519,8 +579,14 @@ export default function Home() {
                 />
               </div>
 
-              <Button type="submit" variant="primary" size="lg" className="w-full">
-                {form.button}
+              <Button 
+                type="submit" 
+                variant="primary" 
+                size="lg" 
+                className="w-full"
+                disabled={formStatus === 'sending'}
+              >
+                {formStatus === 'sending' ? 'Verzenden...' : form.button}
               </Button>
             </form>
           </Card>
