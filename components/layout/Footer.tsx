@@ -14,12 +14,12 @@ export const Footer: React.FC = () => {
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-12 max-w-2xl mx-auto">
+          {/* Brand & Social Media Section */}
+          <div>
             <h3 className="text-2xl font-bold text-white mb-3">{site.name}</h3>
-            <p className="text-gray-400 text-sm mb-4">{footer.tagline}</p>
-            <div className="flex space-x-4 mt-4">
+            <p className="text-gray-400 text-sm mb-6">{footer.tagline}</p>
+            <div className="flex space-x-4">
               {/* Social Media Icons */}
               <a
                 href={site.social.facebook}
@@ -57,40 +57,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">{footer.sections.quick.title}</h4>
-            <ul className="space-y-2">
-              {footer.sections.quick.links.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Info Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">{footer.sections.info.title}</h4>
-            <ul className="space-y-2">
-              {footer.sections.info.links.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-semibold mb-4">{footer.sections.contact.title}</h4>
@@ -108,9 +74,19 @@ export const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6">
-          <p className="text-center text-gray-400 text-sm">
-            © {currentYear} {site.name}. Alle rechten voorbehouden.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} {site.name}. Alle rechten voorbehouden.
+            </p>
+            <div className="flex gap-6">
+              <a href="/algemene-voorwaarden" className="text-gray-400 hover:text-white transition-colors text-sm">
+                Algemene Voorwaarden
+              </a>
+              <a href="/privacyverklaring" className="text-gray-400 hover:text-white transition-colors text-sm">
+                Privacyverklaring
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

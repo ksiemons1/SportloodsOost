@@ -23,8 +23,12 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const autoScrollIntervalRef = React.useRef<NodeJS.Timeout | null>(null);
   const touchStartX = React.useRef<number>(0);
   const touchEndX = React.useRef<number>(0);
+  const scrollAmountRef = React.useRef<number>(0);
 
-  const selectedPost = selectedIndex !== null ? posts[selectedIndex] : null;
+  const selectedPost = selectedIndex !== null ? posts[selectedIndex % posts.length] : null;
+  
+  // Duplicate posts for seamless loop
+  const duplicatedPosts = [...posts, ...posts];
 
   // Handle touch start
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -80,105 +84,49 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
     }
   }, []);
 
-  // Auto scroll effect
+  // Auto scroll effect - continuous smooth scrolling
   React.useEffect(() => {
-    if (selectedIndex === null) {
-      // Start auto scroll after initial delay
-      const startDelay = setTimeout(() => {
-        autoScrollIntervalRef.current = setInterval(() => {
-          if (scrollContainerRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-            
-            // If we can't scroll right anymore, scroll back to start
-            if (scrollLeft >= scrollWidth - clientWidth - 10) {
-              scrollContainerRef.current.scrollTo({
-                left: 0,
-                behavior: 'smooth'
-              });
-            } else {
-              // Otherwise scroll right
-              const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 524;
-              scrollContainerRef.current.scrollTo({
-                left: scrollLeft + scrollAmount,
-                behavior: 'smooth'
-              });
-            }
-          }
-        }, 4000); // Auto scroll every 4 seconds
-      }, 1000); // Initial delay of 1 second
+    if (selectedIndex === null && typeof window !== 'undefined') {
+      const cardWidth = window.innerWidth < 768 ? 300 : 400;
+      const gap = 24;
+      const itemWidth = cardWidth + gap;
+      const scrollStep = 0.5; // Pixels per frame
 
-      return () => {
-        clearTimeout(startDelay);
-        if (autoScrollIntervalRef.current) {
-          clearInterval(autoScrollIntervalRef.current);
+      const scroll = () => {
+        if (!scrollContainerRef.current) return;
+
+        scrollAmountRef.current += scrollStep;
+        scrollContainerRef.current.scrollLeft = scrollAmountRef.current;
+
+        // Reset when we've scrolled past the first set of items
+        if (scrollAmountRef.current >= itemWidth * posts.length) {
+          scrollAmountRef.current = 0;
+          scrollContainerRef.current.scrollLeft = 0;
         }
       };
+
+      const intervalId = setInterval(scroll, 16); // ~60fps
+
+      return () => clearInterval(intervalId);
     }
-  }, [selectedIndex]);
+  }, [selectedIndex, posts.length]);
 
   const scroll = (direction: 'left' | 'right') => {
-    // Clear auto scroll when manually scrolling
-    if (autoScrollIntervalRef.current) {
-      clearInterval(autoScrollIntervalRef.current);
-      autoScrollIntervalRef.current = null;
-    }
-
     if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424; // mobile: 300+24, desktop: 400+24
+      const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424;
       
       if (direction === 'left') {
-        // If at the start, jump to the end
-        if (scrollLeft <= 10) {
-          scrollContainerRef.current.scrollTo({
-            left: scrollWidth - clientWidth,
-            behavior: 'smooth'
-          });
-        } else {
-          scrollContainerRef.current.scrollTo({
-            left: Math.max(0, scrollLeft - scrollAmount),
-            behavior: 'smooth'
-          });
-        }
+        scrollContainerRef.current.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
       } else {
-        // If at the end, jump to the start
-        if (scrollLeft >= scrollWidth - clientWidth - 10) {
-          scrollContainerRef.current.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          scrollContainerRef.current.scrollTo({
-            left: scrollLeft + scrollAmount,
-            behavior: 'smooth'
-          });
-        }
+        scrollContainerRef.current.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
       }
     }
-
-    // Restart auto scroll after manual interaction
-    setTimeout(() => {
-      if (selectedIndex === null && autoScrollIntervalRef.current === null) {
-        autoScrollIntervalRef.current = setInterval(() => {
-          if (scrollContainerRef.current) {
-            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-            
-            if (scrollLeft >= scrollWidth - clientWidth - 10) {
-              scrollContainerRef.current.scrollTo({
-                left: 0,
-                behavior: 'smooth'
-              });
-            } else {
-              const scrollAmount = typeof window !== 'undefined' && window.innerWidth < 768 ? 324 : 424;
-              scrollContainerRef.current.scrollTo({
-                left: scrollLeft + scrollAmount,
-                behavior: 'smooth'
-              });
-            }
-          }
-        }, 4000);
-      }
-    }, 8000); // Wait 8 seconds before restarting auto scroll
   };
 
   return (
@@ -255,31 +203,22 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
-            className="overflow-x-auto animate-fadeIn touch-pan-y w-full snap-x snap-mandatory carousel-scroll-container"
+            className="overflow-x-auto animate-fadeIn touch-pan-y w-full carousel-scroll-container"
             style={{ 
               scrollbarWidth: 'none',
-              msOverflowStyle: 'none'
+              msOverflowStyle: 'none',
+              scrollBehavior: 'auto'
             }}
           >
-            <style jsx>{`
-              @media (min-width: 768px) {
-                .carousel-scroll-container {
-                  width: 1248px !important;
-                  max-width: 1248px;
-                  min-width: 1248px;
-                  margin: 0 auto;
-                }
-              }
-            `}</style>
             <style jsx>{`
               .carousel-scroll-container::-webkit-scrollbar {
                 display: none;
               }
             `}</style>
-            <div className="flex gap-4 md:gap-6 px-[calc(50vw-150px)] md:px-0" style={{ width: 'max-content' }}>
-              {posts.map((post, index) => (
+            <div className="flex gap-4 md:gap-6" style={{ width: 'max-content' }}>
+              {duplicatedPosts.map((post, index) => (
                 <button
-                  key={index}
+                  key={`${index}-${post.title}`}
                   onClick={() => setSelectedIndex(index)}
                   className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0 w-[300px] h-[400px] md:w-[400px] md:h-[500px] snap-center"
                 >
