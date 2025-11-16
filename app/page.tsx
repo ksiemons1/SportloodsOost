@@ -152,12 +152,12 @@ export default function Home() {
                 {hero.description}
               </p>
 
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-row gap-3 md:gap-4">
                 <Button
                   href="#tarieven"
                   variant="primary"
                   size="lg"
-                  className="font-bold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 hover:bg-white hover:text-primary-600 transition-colors whitespace-nowrap"
+                  className="font-bold text-sm md:text-lg px-4 md:px-8 py-3 md:py-4 hover:bg-white hover:text-primary-600 transition-colors flex-1"
                 >
                   {hero.cta.primary}
                 </Button>
@@ -166,7 +166,7 @@ export default function Home() {
                   href="#location"
                   variant="secondary"
                   size="lg"
-                  className="font-bold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-white text-primary-600 hover:bg-primary-600 hover:text-white transition-colors whitespace-nowrap"
+                  className="font-bold text-sm md:text-lg px-4 md:px-8 py-3 md:py-4 bg-white text-primary-600 hover:bg-primary-600 hover:text-white transition-colors flex-1"
                 >
                   {hero.cta.secondary}
                 </Button>
