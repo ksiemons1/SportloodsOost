@@ -80,7 +80,7 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ title,
             </div>
 
             <p className="text-white text-base mb-6 leading-relaxed">
-              "{testimonial.text}"
+              &ldquo;{testimonial.text}&rdquo;
             </p>
 
             <div className="border-t border-primary-400 pt-4">
