@@ -89,34 +89,9 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
     }
   }, []);
 
-  // Auto scroll effect - continuous smooth scrolling (desktop only)
+  // Auto scroll effect removed - no auto-scrolling on any device
   React.useEffect(() => {
-    if (selectedIndex === null && !isTouching && typeof window !== 'undefined') {
-      // Only auto-scroll on desktop
-      if (window.innerWidth < 768) return;
-      
-      const cardWidth = window.innerWidth < 768 ? 300 : 400;
-      const gap = 24;
-      const itemWidth = cardWidth + gap;
-      const scrollStep = 0.5; // Pixels per frame
-
-      const scroll = () => {
-        if (!scrollContainerRef.current) return;
-
-        scrollAmountRef.current += scrollStep;
-        scrollContainerRef.current.scrollLeft = scrollAmountRef.current;
-
-        // Reset when we've scrolled past the first set of items
-        if (scrollAmountRef.current >= itemWidth * posts.length) {
-          scrollAmountRef.current = 0;
-          scrollContainerRef.current.scrollLeft = 0;
-        }
-      };
-
-      const intervalId = setInterval(scroll, 16); // ~60fps
-
-      return () => clearInterval(intervalId);
-    }
+    // Auto-scroll disabled
   }, [selectedIndex, isTouching, posts.length]);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -141,34 +116,39 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
     <div className="transition-all duration-500 ease-in-out">
       {selectedPost ? (
         /* Selected view - Image left, Content right */
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start animate-fadeIn px-6 lg:px-0" style={{ minHeight: '500px' }}>
-          {/* Image - Left side */}
-          <div className="animate-slideInLeft" style={{ height: '500px', maxWidth: '400px' }}>
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="w-full h-full group cursor-pointer"
-            >
-              <div className="w-full h-full bg-gray-900 overflow-hidden hover:ring-4 hover:ring-primary-300 transition-all">
-                <Image
-                  src={selectedPost.image}
-                  alt={selectedPost.imageAlt || selectedPost.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover object-center transition-transform group-hover:scale-105"
-                />
+        <div className="animate-fadeIn px-6 lg:px-0">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12" style={{ minHeight: '500px' }}>
+              {/* Image - Left side (5 columns to accommodate 400px image) */}
+              <div className="lg:col-span-5 animate-slideInLeft flex justify-center lg:justify-start">
+                <button
+                  onClick={() => setSelectedIndex(null)}
+                  className="group cursor-pointer flex-shrink-0"
+                  style={{ width: '400px', height: '500px', maxWidth: '100%' }}
+                >
+                  <div className="relative w-full h-full overflow-hidden hover:ring-4 hover:ring-primary-300 transition-all">
+                    <Image
+                      src={selectedPost.image}
+                      alt={selectedPost.imageAlt || selectedPost.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-cover object-center transition-transform group-hover:scale-105"
+                    />
+                  </div>
+                </button>
               </div>
-            </button>
-          </div>
 
-          {/* Content - Right side */}
-          <div className="animate-slideInRight">
-            <Badge variant="primary" className="mb-4">{selectedPost.date}</Badge>
-            <h3 className="text-4xl font-bold text-gray-900 mb-6">
-              {selectedPost.title}
-            </h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              {selectedPost.content || selectedPost.description}
-            </p>
+              {/* Content - Right side (7 columns) */}
+              <div className="lg:col-span-7 animate-slideInRight">
+                <p className="text-primary-600 font-semibold text-sm lg:text-base mb-4">{selectedPost.date}</p>
+                <h3 className="text-4xl font-bold text-gray-900 mb-6">
+                  {selectedPost.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  {selectedPost.content || selectedPost.description}
+                </p>
+              </div>
+            </div>
             <div className="flex justify-center mt-8">
               <button
                 onClick={() => setSelectedIndex(null)}

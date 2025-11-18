@@ -52,54 +52,59 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
     <div className="transition-all duration-500 ease-in-out">
       {selectedMember ? (
         /* Selected view - Portrait left, Text right */
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start animate-fadeIn px-6 lg:px-0" style={{ minHeight: '400px' }}>
-          {/* Portrait - Left side */}
-          <div className="animate-slideInLeft mx-auto w-full" style={{ height: '400px', maxWidth: '400px' }}>
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="w-full h-full group cursor-pointer"
-            >
-              <div className="w-full h-full bg-gray-900 overflow-hidden hover:ring-4 hover:ring-primary-300 transition-all">
-                <Image
-                  src={selectedMember.image}
-                  alt={selectedMember.imageAlt || selectedMember.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover object-center transition-transform group-hover:scale-105 grayscale"
-                />
+        <div className="animate-fadeIn px-6 lg:px-0">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12" style={{ minHeight: '500px' }}>
+              {/* Portrait - Left side (5 columns to accommodate 400px image) */}
+              <div className="lg:col-span-5 animate-slideInLeft flex justify-center lg:justify-start">
+                <button
+                  onClick={() => setSelectedIndex(null)}
+                  className="group cursor-pointer flex-shrink-0"
+                  style={{ width: '400px', height: '500px', maxWidth: '100%' }}
+                >
+                  <div className="relative w-full h-full overflow-hidden hover:ring-4 hover:ring-primary-300 transition-all">
+                    <Image
+                      src={selectedMember.image}
+                      alt={selectedMember.imageAlt || selectedMember.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-cover object-center transition-transform group-hover:scale-105 grayscale"
+                    />
+                  </div>
+                </button>
               </div>
-            </button>
-          </div>
 
-          {/* Text - Right side */}
-          <div className="animate-slideInRight">
-            <h3 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
-              {selectedMember.name}
-            </h3>
-            <p className="text-primary-600 font-semibold text-lg lg:text-xl mb-6 lg:mb-8">
-              {selectedMember.role}
-            </p>
-            <div className="text-gray-700 mb-6 lg:mb-8 leading-relaxed text-base lg:text-lg space-y-6">
-              {Array.isArray(selectedMember.bio) ? (
-                selectedMember.bio.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))
-              ) : (
-                <p>{selectedMember.bio}</p>
-              )}
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-3 lg:mb-4 text-lg lg:text-xl">
-                Kwalificaties:
-              </h4>
-              <ul className="space-y-2 lg:space-y-3">
-                {selectedMember.certifications.map((cert, i) => (
-                  <li key={i} className="text-gray-700 flex items-start">
-                    <span className="text-primary-600 mr-2 lg:mr-3 text-lg lg:text-xl">✓</span>
-                    <span className="text-base lg:text-lg">{cert}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Text - Right side (7 columns) */}
+              <div className="lg:col-span-7 animate-slideInRight">
+                <h3 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
+                  {selectedMember.name}
+                </h3>
+                <p className="text-primary-600 font-semibold text-lg lg:text-xl mb-6 lg:mb-8">
+                  {selectedMember.role}
+                </p>
+                <div className="text-gray-700 mb-6 lg:mb-8 leading-relaxed text-base lg:text-lg space-y-6">
+                  {Array.isArray(selectedMember.bio) ? (
+                    selectedMember.bio.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <p>{selectedMember.bio}</p>
+                  )}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 lg:mb-4 text-lg lg:text-xl">
+                    Kwalificaties:
+                  </h4>
+                  <ul className="space-y-2 lg:space-y-3">
+                    {selectedMember.certifications.map((cert, i) => (
+                      <li key={i} className="text-gray-700 flex items-start">
+                        <span className="text-primary-600 mr-2 lg:mr-3 text-lg lg:text-xl">✓</span>
+                        <span className="text-base lg:text-lg">{cert}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="flex justify-center mt-6 lg:mt-8">
               <button

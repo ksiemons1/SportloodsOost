@@ -44,7 +44,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
           <p className="text-xl md:text-2xl text-primary-50 mb-10 leading-relaxed font-light">
             {description}
           </p>
-          <Button href={buttonHref} variant="secondary" size="lg" className="bg-white text-primary-700 hover:bg-primary-800 hover:text-white font-semibold">
+          <Button href={buttonHref} variant="secondary" size="lg" className="bg-white text-primary-700">
             {buttonLabel}
           </Button>
           {note && (
