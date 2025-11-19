@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     // Create transporter - you'll need to configure this with your email provider
     // Option 1: Using Gmail (requires app-specific password)
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER, // your-email@gmail.com
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     });
 
     // Option 2: Using custom SMTP (recommended for business)
-    // const transporter = nodemailer.createTransporter({
+    // const transporter = nodemailer.createTransport({
     //   host: process.env.SMTP_HOST, // e.g., smtp.hostnet.nl
     //   port: parseInt(process.env.SMTP_PORT || '587'),
     //   secure: false, // true for 465, false for other ports
