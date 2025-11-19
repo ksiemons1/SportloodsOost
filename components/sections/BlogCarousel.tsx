@@ -21,52 +21,33 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [isTouching, setIsTouching] = useState(false);
+  const [showArrows, setShowArrows] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [clickStartX, setClickStartX] = useState(0);
+  const [clickStartY, setClickStartY] = useState(0);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-  const autoScrollIntervalRef = React.useRef<NodeJS.Timeout | null>(null);
-  const touchStartX = React.useRef<number>(0);
-  const touchEndX = React.useRef<number>(0);
-  const scrollAmountRef = React.useRef<number>(0);
 
   const selectedPost = selectedIndex !== null ? posts[selectedIndex % posts.length] : null;
   
-  // Duplicate posts for seamless loop
-  const duplicatedPosts = [...posts, ...posts];
+  // Don't duplicate posts - show original posts only
+  const displayPosts = posts;
 
-  // Handle touch start
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    setIsTouching(true);
-  };
-
-  // Handle touch move
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  // Handle touch end
-  const handleTouchEnd = () => {
-    const diff = touchStartX.current - touchEndX.current;
-    const threshold = 50; // Minimum swipe distance
-    
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        // Swiped left - scroll right
-        scroll('right');
-      } else {
-        // Swiped right - scroll left
-        scroll('left');
-      }
-    }
-    setIsTouching(false);
-  };
-
-  // Update scroll button visibility
+  // Update scroll button visibility and check if arrows needed
   const updateScrollButtons = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      
+      // Only show arrows if content is wider than container
+      setShowArrows(scrollWidth > clientWidth + 10);
+      
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+      
+      // Update current slide for dots
+      const cardWidth = window.innerWidth < 768 ? 300 : 400;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      const slideIndex = Math.round(scrollLeft / (cardWidth + gap));
+      setCurrentSlide(slideIndex % posts.length);
     }
   };
 
@@ -92,7 +73,7 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
   // Auto scroll effect removed - no auto-scrolling on any device
   React.useEffect(() => {
     // Auto-scroll disabled
-  }, [selectedIndex, isTouching, posts.length]);
+  }, [selectedIndex, posts.length]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -165,39 +146,40 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
       ) : (
         /* Carousel view - Scrollable cards with partial 4th card visible */
         <div className="relative w-full flex items-center justify-center">
-          {/* Left Arrow - Outside container */}
-          <button
-            onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
-            aria-label="Previous"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+          {/* Left Arrow - Only show if arrows are needed */}
+          {showArrows && (
+            <button
+              onClick={() => scroll('left')}
+              className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
+              aria-label="Previous"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
 
-          {/* Right Arrow - Outside container */}
-          <button
-            onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
-            aria-label="Next"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {/* Right Arrow - Only show if arrows are needed */}
+          {showArrows && (
+            <button
+              onClick={() => scroll('right')}
+              className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-50 bg-white/90 hover:bg-white text-primary-600 rounded-full p-3 transition-all hover:scale-110 shadow-xl"
+              aria-label="Next"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
 
           {/* Scrollable Container */}
           <div 
             ref={scrollContainerRef}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            className="overflow-x-scroll animate-fadeIn w-full carousel-scroll-container"
+            className="carousel-scroll-container flex overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 px-[calc(50vw-150px)] md:px-0"
             style={{ 
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              scrollBehavior: 'auto',
+              scrollBehavior: 'smooth',
               WebkitOverflowScrolling: 'touch'
             }}
           >
@@ -206,11 +188,33 @@ export const BlogCarousel: React.FC<BlogCarouselProps> = ({ posts }) => {
                 display: none;
               }
             `}</style>
-            <div className="flex gap-4 md:gap-6" style={{ width: 'max-content' }}>
-              {duplicatedPosts.map((post, index) => (
+            <div className="flex gap-4 md:gap-6 md:justify-center">
+              {displayPosts.map((post, index) => (
                 <button
                   key={`${index}-${post.title}`}
-                  onClick={() => setSelectedIndex(index)}
+                  onMouseDown={(e) => {
+                    setClickStartX(e.clientX);
+                    setClickStartY(e.clientY);
+                  }}
+                  onTouchStart={(e) => {
+                    setClickStartX(e.touches[0].clientX);
+                    setClickStartY(e.touches[0].clientY);
+                  }}
+                  onClick={(e) => {
+                    // Check if this was a drag/scroll gesture
+                    const moveThreshold = 10;
+                    const currentX = 'clientX' in e ? e.clientX : clickStartX;
+                    const currentY = 'clientY' in e ? e.clientY : clickStartY;
+                    const moveDistance = Math.sqrt(
+                      Math.pow(currentX - clickStartX, 2) + 
+                      Math.pow(currentY - clickStartY, 2)
+                    );
+                    
+                    // Only open if it wasn't a scroll/drag
+                    if (moveDistance < moveThreshold) {
+                      setSelectedIndex(index);
+                    }
+                  }}
                   className="relative group cursor-pointer overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-300 flex-shrink-0 w-[300px] h-[400px] md:w-[400px] md:h-[500px] snap-center"
                 >
                   {/* Image */}

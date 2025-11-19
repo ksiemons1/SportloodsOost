@@ -174,7 +174,7 @@ export const OfferingsSection: React.FC<OfferingsSectionProps> = ({ programs }) 
         <Container>
           <div className="space-y-4">
             {programs.map((program, index) => (
-              <div key={program.id} className="border border-gray-200">
+              <div key={program.id} id={`program-${index}`} className="border border-gray-200">
                 <button
                   onClick={() => toggleExpand(index)}
                   className="w-full text-left p-6 hover:bg-gray-50"

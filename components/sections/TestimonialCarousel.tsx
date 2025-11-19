@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Container, Heading } from '../ui';
 
 interface Testimonial {
@@ -17,33 +17,45 @@ interface TestimonialCarouselProps {
 
 export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ title, testimonials }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Smooth auto-scroll with snap - Desktop only
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    const scrollStep = 0.5; // Pixels per frame
-    const cardWidth = 384; // w-96 = 384px
-    const gap = 24; // gap-6 = 24px
-    const itemWidth = cardWidth + gap;
+    // Check if desktop
+    const isDesktop = window.innerWidth >= 768;
+    if (!isDesktop) return;
 
-    const scroll = () => {
-      if (!scrollContainer) return;
+    // Auto-scroll every 4 seconds
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % testimonials.length;
+        
+        // Scroll to the next card smoothly
+        if (scrollContainer) {
+          const cardWidth = 384; // w-96
+          const gap = 24; // gap-6
+          const itemWidth = cardWidth + gap;
+          const scrollPosition = nextIndex * itemWidth;
+          
+          scrollContainer.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+        }
+        
+        return nextIndex;
+      });
+    }, 4000); // Change slide every 4 seconds
 
-      scrollAmount += scrollStep;
-      scrollContainer.scrollLeft = scrollAmount;
-
-      // Reset when we've scrolled past the first set of items
-      if (scrollAmount >= itemWidth * testimonials.length) {
-        scrollAmount = 0;
-        scrollContainer.scrollLeft = 0;
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
     };
-
-    const intervalId = setInterval(scroll, 16); // ~60fps
-
-    return () => clearInterval(intervalId);
   }, [testimonials.length]);
 
   // Duplicate testimonials for seamless loop
@@ -59,13 +71,23 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ title,
 
       <div 
         ref={scrollRef}
-        className="flex gap-6 overflow-x-hidden"
-        style={{ scrollBehavior: 'auto' }}
+        className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory px-[calc(50vw-140px)] md:px-0"
+        style={{ 
+          scrollBehavior: 'smooth',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch'
+        }}
       >
+        <style jsx>{`
+          div::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
         {duplicatedTestimonials.map((testimonial, index) => (
           <div
             key={`${testimonial.id}-${index}`}
-            className="flex-shrink-0 w-96 bg-primary-700 rounded-lg p-8 shadow-sm border border-primary-400"
+            className="flex-shrink-0 w-[280px] md:w-96 bg-primary-700 rounded-lg p-6 md:p-8 shadow-sm border border-primary-400 snap-center"
           >
             <div className="flex gap-1 mb-4">
               {[...Array(testimonial.rating)].map((_, i) => (

@@ -21,8 +21,28 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const selectedMember = selectedIndex !== null ? members[selectedIndex] : null;
+
+  // Track scroll position for dots
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const cardWidth = window.innerWidth < 768 ? 280 : 400;
+      const gap = window.innerWidth < 768 ? 16 : 32;
+      const slideIndex = Math.round(scrollLeft / (cardWidth + gap));
+      setCurrentSlide(slideIndex);
+    }
+  };
+
+  React.useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
   // Touch handlers for swipe gestures
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -169,6 +189,31 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({ members }) => {
                 </div>
               </div>
             </button>
+          ))}
+        </div>
+      )}
+      
+      {/* Navigation Dots - Only show on mobile in default view */}
+      {!selectedMember && (
+        <div className="flex md:hidden justify-center gap-2 mt-6">
+          {members.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (scrollContainerRef.current) {
+                  const cardWidth = 280;
+                  const gap = 16;
+                  const scrollPosition = index * (cardWidth + gap);
+                  scrollContainerRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+                }
+              }}
+              className={`transition-all duration-300 ${
+                currentSlide === index 
+                  ? 'w-8 h-3 bg-primary-600' 
+                  : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+              } rounded-full`}
+              aria-label={`Ga naar trainer ${index + 1}`}
+            />
           ))}
         </div>
       )}

@@ -100,6 +100,10 @@ export default function Home() {
   // Intersection Observer for stats section
   const [isStatsVisible, setIsStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
+  
+  // Membership carousel state
+  const [currentMembershipSlide, setCurrentMembershipSlide] = useState(0);
+  const membershipScrollRef = useRef<HTMLDivElement>(null);
 
   // Contact form state
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -174,6 +178,25 @@ export default function Home() {
         observer.unobserve(currentRef);
       }
     };
+  }, []);
+
+  // Track membership carousel scroll position
+  useEffect(() => {
+    const container = membershipScrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const cardWidth = window.innerWidth < 768 ? 280 : 0; // Only track on mobile
+      if (cardWidth > 0) {
+        const gap = 32; // gap-8
+        const slideIndex = Math.round(scrollLeft / (cardWidth + gap));
+        setCurrentMembershipSlide(slideIndex);
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -299,7 +322,9 @@ export default function Home() {
           
         {/* Memberships */}
         <div className="mb-16">
-          <div className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl md:mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 px-[calc(50vw-140px)] md:px-0 pt-4"
+          <div 
+            ref={membershipScrollRef}
+            className="flex md:grid md:grid-cols-3 gap-8 max-w-5xl md:mx-auto overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 px-[calc(50vw-140px)] md:px-0 pt-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             <style jsx>{`
@@ -369,6 +394,29 @@ export default function Home() {
                   </div>
                 </div>
               </Card>
+            </div>
+            
+            {/* Navigation Dots - Mobile only */}
+            <div className="flex md:hidden justify-center gap-2 mt-6">
+              {[...memberships.items, memberships.fullWidth].map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    if (membershipScrollRef.current) {
+                      const cardWidth = 280;
+                      const gap = 32;
+                      const scrollPosition = index * (cardWidth + gap);
+                      membershipScrollRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+                    }
+                  }}
+                  className={`transition-all duration-300 ${
+                    currentMembershipSlide === index 
+                      ? 'w-8 h-3 bg-primary-600' 
+                      : 'w-3 h-3 bg-gray-400 hover:bg-gray-500'
+                  } rounded-full`}
+                  aria-label={`Ga naar membership ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
       </section>
